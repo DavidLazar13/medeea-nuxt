@@ -3,45 +3,43 @@
         <Header />
         <Titles />
         <b-container fluid class="app_page">
-            <b-row id="absolute-row">
-                <b-col cols="6" class="border">
+        <b-row>
+          <div id="scroll-area">
+            <b-row>
+                <b-col cols="6" class="border" >
                   <b-row>
                     <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
                   </b-row>
                 </b-col>
-                <b-col cols="6">
-                    <b-row>
-                      <b-col cols="6" class="border pt-3 pb-4">
-                         <div>
-                            <p class="mb-0 pb-0">FW19/20 BLAZER</p>
-                            <p class="pt-0 mt-0">2.300 RON</p>
-                          </div>
-                           <div class="pt-1 mr-4">
-                              <p class="mb-0 pb-0 uppercase">Suit pant in refined wool WITH custom 
-                                pinstripe fabric, selvage curved seam. </p>
-                          </div>
-                      </b-col>
-                      <b-col cols="6" class="border pt-3 pb-4">
-                          <router-link to="/">
+                <b-col cols="3" class="border sticky pt-3 pb-4">
+                    <div>
+                        <p class="mb-0 pb-0">FW19/20 BLAZER</p>
+                        <p class="pt-0 mt-0">2.300 RON</p>
+                    </div>
+                    <div class="pt-1">
+                        <p class="mb-0 pb-0 uppercase">Suit pant in refined wool WITH custom 
+                          pinstripe fabric, selvage curved seam. </p>
+                    </div>
+                </b-col>
+                <b-col cols="3" class="border sticky pt-3 pb-4">
+                    <router-link to="/">
                               <p>BACK</p>
-                          </router-link>
-                      </b-col>
-                      <ProductCard />
-                      <ProductCard />
-                      <ProductCard />
-                      <ProductCard />
-                    </b-row>
-                    <b-row class="border">
-                      <ProductCard />
-                      <ProductCard />
-                      <ProductCard />
-                      <ProductCard />
+                    </router-link>
+                </b-col>  
+            </b-row> 
+            <b-row>
+                <b-col cols="12" class="border" >
+                  <b-row>
+                    <CampaignCard />
+                    <CampaignCard />
+                    <CampaignCard />
+                    <CampaignCard />
+                    <CampaignCard />
                   </b-row>
                 </b-col>
-            </b-row> 
+            </b-row>
+          </div>
+        </b-row>
         </b-container>
 
         <Footer />   
@@ -53,32 +51,43 @@
   import Titles from '@/components/Titles'
   import Footer from '@/components/Footer'
   import ProductCard from '@/components/ProductCard'
+  import LookbookCard from '@/components/LookbookCard'
+  import CampaignCard from '@/components/CampaignCard'
+
 
   export default {
       components: {
         Header,
         Titles,
         Footer,
-        ProductCard
+        ProductCard,
+        LookbookCard,
+        CampaignCard
     }
   }
 
-  const contentful = require('contentful')
+  // const contentful = require('contentful')
 
-  const client = contentful.createClient({
-    space: '6580dm5jk20d',
-    environment: 'master', // defaults to 'master' if not set
-    accessToken: '4FsCxM63XHlG6O-h5dvdpzVz25j5u8IadghfkuQOcz0'
-  })
+  // const client = contentful.createClient({
+  //   space: '6580dm5jk20d',
+  //   environment: 'master', // defaults to 'master' if not set
+  //   accessToken: '4FsCxM63XHlG6O-h5dvdpzVz25j5u8fIadghfkuQOcz0'
+  // })
 
-  client.getEntries()
-  .then((response) => console.log(response.items))
-  .catch(console.error)
+  // client.getEntries()
+  // .then((response) => console.log(response.items))
+  // .catch(console.error)
 
 </script>
 
 
 <style>
+.sticky{
+  height: 91vh;
+  position: sticky;
+  top: 0;
+}
+
 .container {
   min-height: 100%;
   margin: 0 auto;
@@ -116,7 +125,8 @@
 .app_page {
     margin: 0%;
     overflow: hidden;
-    min-height: calc(100vh - 115px);
+    min-height: calc(100vh - 141px);
+    
 }
 
 ::-webkit-scrollbar {
@@ -124,58 +134,16 @@
 }
 
 @media (min-width: 768px) {
-
-    #absolute-row {
-        position: absolute;
-        top: 115px;
+    #scroll-area {
+        max-height: 90vh;
         bottom: 0;
         left: 0;
+        padding: 0 15px;
         overflow-y: scroll;
+        overflow-x: hidden;
     }
 
-    #left {
-        position: absolute;
-        top: 115px;
-        bottom: 0;
-        left: 0;
-        width: 50%;
-        overflow-y: scroll;
-    }
-
-    #middle {
-        
-        
-        bottom: 0;
-        left: 50%;
-        width: 25%;
-        overflow-y: scroll;
-    }
-
-    #right {
-        position: absolute;
-        top: 115px;
-        bottom: 0;
-        right: 0;
-        overflow-y: scroll;
-        width: 50%;
-    }
+   
 }
-
-    #left {
-        height: auto;
-    }
-
-    #middle {
-        height: auto;
-    }
-
-    #right {
-        height: auto;
-    }
-
-    h4 {
-        padding: 10px 0;
-    }
-
 
 </style>

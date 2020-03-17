@@ -14,6 +14,7 @@
 </script>
 
 <style scoped>
+
     .pic-card{
         box-sizing: border-box;
         margin: 0;
@@ -27,4 +28,5 @@
         font-size: 10px;
         font-weight: bold;
     }
+    
 </style>

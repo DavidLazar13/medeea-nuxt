@@ -1,6 +1,6 @@
 <template>
  
-        <b-col cols="6" class="pic-card border-sides">
+        <b-col cols="6" class="pic-card border">
             
             <img class="image" src="/lookbook/11_92A6807.jpg"/>
 
@@ -16,10 +16,7 @@
 </script>
 
 <style scoped>
-    .border-sides {
-        border-left: 1px solid;
-        border-right: 1px solid;
-    }
+    
     .pic-card{
         box-sizing: border-box;
         margin: 0;
@@ -33,6 +30,5 @@
         font-size: 10px;
         font-weight: bold;
     }
-
-    
+ 
 </style>

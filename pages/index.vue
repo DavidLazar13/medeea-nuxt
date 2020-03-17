@@ -83,6 +83,7 @@
         </b-container>
 
         <Footer />   
+        
   </section>
 </template>
 
@@ -105,17 +106,17 @@
     }
   }
 
-  const contentful = require('contentful')
+  // const contentful = require('contentful')
 
-  const client = contentful.createClient({
-    space: '6580dm5jk20d',
-    environment: 'master', // defaults to 'master' if not set
-    accessToken: '4FsCxM63XHlG6O-h5dvdpzVz25j5u8IadghfkuQOcz0'
-  })
+  // const client = contentful.createClient({
+  //   space: '6580dm5jk20d',
+  //   environment: 'master', // defaults to 'master' if not set
+  //   accessToken: '4FsCxM63XHlG6O-h5dvdpzVz25j5u8IadghfkuQOcz0'
+  // })
 
-  client.getEntries()
-  .then((response) => console.log(response.items))
-  .catch(console.error)
+  // client.getEntries()
+  // .then((response) => console.log(response.items))
+  // .catch(console.error)
 
 </script>
 
@@ -158,7 +159,7 @@
 .app_page {
     margin: 0%;
     overflow: hidden;
-    min-height: calc(100vh - 115px);
+    min-height: calc(100vh - 141px);
     
 }
 
@@ -168,30 +169,27 @@
 
 @media (min-width: 768px) {
     #left {
-        position: absolute;
-        top: 115px;
+        max-height:90vh;
         bottom: 0;
-        left: 0;
-        width: 50%;
+        
+       
         overflow-y: scroll;
     }
 
     #middle {
-        position: absolute;
-        top: 115px;
+        max-height:90vh;
         bottom: 0;
-        left: 50%;
-        width: 25%;
+    
+       
         overflow-y: scroll;
     }
 
     #right {
-        position: absolute;
-        top: 115px;
+        max-height:90vh;
         bottom: 0;
-        right: 0;
+      
         overflow-y: scroll;
-        width: 25%;
+        
     }
 }
 
@@ -215,7 +213,7 @@
 a:link {
   text-decoration: none;
   color:black;
-  cursor:default;
+  cursor:default
 }
 
 a:visited {

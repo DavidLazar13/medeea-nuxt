@@ -1,6 +1,6 @@
 <template>
  
-        <b-col cols="6" class="pic-card border-sides">
+        <b-col cols="12" md="6" class="pic-card border-sides">
             <nuxt-link to="/product">
                 <img class="image" src="/lookbook/11_92A6807.jpg"/>
             </nuxt-link>
@@ -20,6 +20,7 @@
 </script>
 
 <style scoped>
+
     .pic-card{
         box-sizing: border-box;
         margin: 0;
@@ -39,6 +40,5 @@
         border-left: 1px solid black!important;
         border-collapse: collapse!important;
     }
-
-    
+  
 </style>

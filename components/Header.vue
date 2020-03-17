@@ -20,6 +20,7 @@
 
 
 <style>
+
     .logo { 
         max-width: 150px;
     }

@@ -1,6 +1,6 @@
 <template>
-    <b-container fluid class="header-height">
-            <b-row>
+    <b-container fluid >
+            <b-row class="title-container-h">
                 <b-col cols="6" class="border pt-3 pb-4">
                     <p>LOOKBOOK</p>
                 </b-col>
@@ -13,3 +13,9 @@
             </b-row>
     </b-container>
 </template>
+
+<style scoped>
+ .title-container-h{
+     height: 85px;
+ }
+</style>

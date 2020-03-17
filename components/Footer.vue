@@ -32,9 +32,6 @@
 
 
 <style>
-    .logo { 
-        max-width: 150px;
-    }
 
     p{
         font-weight: bold;
