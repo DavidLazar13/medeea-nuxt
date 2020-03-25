@@ -1,47 +1,63 @@
 <template>
   <section>
-        <Header />
-        <Titles />
-        <b-container fluid class="app_page">
-        <b-row>
-          <div id="scroll-area">
-            <b-row>
-                <b-col cols="6" class="border" >
-                  <b-row>
-                    <ProductCard />
-                  </b-row>
-                </b-col>
-                <b-col cols="3" class="border sticky pt-3 pb-4">
-                    <div>
-                        <p class="mb-0 pb-0">FW19/20 BLAZER</p>
-                        <p class="pt-0 mt-0">2.300 RON</p>
-                    </div>
-                    <div class="pt-1">
-                        <p class="mb-0 pb-0 uppercase">Suit pant in refined wool WITH custom 
-                          pinstripe fabric, selvage curved seam. </p>
-                    </div>
-                </b-col>
-                <b-col cols="3" class="border sticky pt-3 pb-4">
-                    <router-link to="/">
-                              <p>BACK</p>
-                    </router-link>
-                </b-col>  
-            </b-row> 
-            <b-row>
-                <b-col cols="12" class="border" >
-                  <b-row>
-                    <CampaignCard />
-                    <CampaignCard />
-                    <CampaignCard />
-                    <CampaignCard />
-                    <CampaignCard />
-                  </b-row>
-                </b-col>
-            </b-row>
-          </div>
-        </b-row>
-        </b-container>
+        <div class="page-wrap">
+          <Header />
+          <mq-layout mq="sm">
+            <TitleMobile title="CAMPAIGN"/>
+            <DetailsMobile/>
+            <PictureCard />
+            <PictureCard />
+            <PictureCard />
+            <PictureCard />
+            <PictureCard />
+            <LookbookMobile />
+            <StoriesMobile />
+            <InstagramMobile />
+          </mq-layout>
 
+          <mq-layout mq="lg">
+            <Titles />
+            <b-container fluid class="app_page">
+              <b-row>
+                <div id="scroll-area">
+                  <b-row>
+                      <b-col cols="6" class="border" >
+                        <b-row>
+                          <ProductCard />
+                        </b-row>
+                      </b-col>
+                      <b-col cols="3" class="border sticky pt-3 pb-4">
+                          <div>
+                              <p class="mb-0 pb-0">FW19/20 BLAZER</p>
+                              <p class="pt-0 mt-0">2.300 RON</p>
+                          </div>
+                          <div class="pt-1">
+                              <p class="mb-0 pb-0 uppercase">Suit pant in refined wool WITH custom 
+                                pinstripe fabric, selvage curved seam. </p>
+                          </div>
+                      </b-col>
+                      <b-col cols="3" class="border sticky pt-3 pb-4">
+                          <router-link to="/">
+                                    <p>BACK</p>
+                          </router-link>
+                      </b-col>  
+                  </b-row> 
+                  <b-row>
+                      <b-col cols="12" class="border" >
+                        <b-row>
+                          <CampaignCard />
+                          <CampaignCard />
+                          <CampaignCard />
+                          <CampaignCard />
+                          <CampaignCard />
+                        </b-row>
+                      </b-col>
+                  </b-row>
+                </div>
+              </b-row>
+            </b-container>
+          </mq-layout>
+        </div>
         <Footer />   
   </section>
 </template>
@@ -53,6 +69,14 @@
   import ProductCard from '@/components/ProductCard'
   import LookbookCard from '@/components/LookbookCard'
   import CampaignCard from '@/components/CampaignCard'
+  import TitleMobile from '@/components/mobile/TitleMobile'
+  import DetailsMobile from '@/components/mobile/DetailsMobile'
+  import PictureCard from '@/components/mobile/PictureCard'
+  import LookbookMobile from '@/components/mobile/LookbookMobile'
+  import StoriesMobile from '@/components/mobile/StoriesMobile'
+  import InstagramMobile from '@/components/mobile/InstagramMobile'
+
+  
 
 
   export default {
@@ -62,7 +86,13 @@
         Footer,
         ProductCard,
         LookbookCard,
-        CampaignCard
+        CampaignCard,
+        TitleMobile,
+        DetailsMobile,
+        PictureCard,
+        LookbookMobile,
+        StoriesMobile,
+        InstagramMobile
     }
   }
 

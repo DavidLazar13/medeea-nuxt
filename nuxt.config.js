@@ -1,4 +1,6 @@
 
+const config = require('./.contentful.json');
+
 export default {
   mode: 'universal',
   /*
@@ -15,6 +17,11 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  env: {
+    CTF_SPACE_ID: config.CTF_SPACE_ID,
+    CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN,
+    CTF_ENVIRONMENT: config.CTF_ENVIRONMENT
+  },
   /*
   ** Customize the progress-bar color
   */
@@ -28,6 +35,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/contentful'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -40,6 +48,19 @@ export default {
   modules: [
     // Doc: https://bootstrap-vue.js.org
     'bootstrap-vue/nuxt',
+    '@nuxtjs/dotenv',
+    [
+      'nuxt-mq',
+      {
+        // Default breakpoint for SSR
+        defaultBreakpoint: 'default',
+        breakpoints: {
+          sm: 450,
+          md: 768,
+          lg: Infinity
+        }
+      }
+    ]
   ],
   /*
   ** Build configuration
@@ -48,7 +69,7 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+    extend(config, ctx) {
     }
   }
 }

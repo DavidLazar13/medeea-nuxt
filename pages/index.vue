@@ -1,89 +1,103 @@
 <template>
   <section>
-        <Header />
-        <Titles />
-        <b-container fluid class="app_page">
-            <b-row>
-                <b-col cols="12" md="6" class="" id="left">
-                  <b-row>
-                    <LookbookCard 
-                      thumbnail="https://static.dezeen.com/uploads/2019/09/parsons-fashion-show-2019-new-york-city-usa-dezeen-2364-meg-calloway2-852x1278.jpg"
-                      title="FW19/20 BLAZER"
-                      price="2.300 RON"
-                    />
-                    <LookbookCard 
-                      thumbnail="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-                      title="FW19/20 BLAZER"
-                      price="2.300 RON"
-                    />
-                    <LookbookCard 
-                      thumbnail="https://static.dezeen.com/uploads/2019/09/parsons-fashion-show-2019-new-york-city-usa-dezeen-2364-meg-calloway2-852x1278.jpg"
-                      title="FW19/20 BLAZER"
-                      price="2.300 RON"
-                    />
-                    <LookbookCard 
-                      thumbnail="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-                      title="FW19/20 BLAZER"
-                      price="2.300 RON"
-                    />
-                    <LookbookCard 
-                      thumbnail="https://static.dezeen.com/uploads/2019/09/parsons-fashion-show-2019-new-york-city-usa-dezeen-2364-meg-calloway2-852x1278.jpg"
-                      title="FW19/20 BLAZER"
-                      price="2.300 RON"
-                    />
-                    <LookbookCard 
-                      thumbnail="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-                      title="FW19/20 BLAZER"
-                      price="2.300 RON"
-                    />
-                    <LookbookCard 
-                      thumbnail="https://static.dezeen.com/uploads/2019/09/parsons-fashion-show-2019-new-york-city-usa-dezeen-2364-meg-calloway2-852x1278.jpg"
-                      title="FW19/20 BLAZER"
-                      price="2.300 RON"
-                    />
-                    <LookbookCard 
-                      thumbnail="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-                      title="FW19/20 BLAZER"
-                      price="2.300 RON"
-                    />
-                  </b-row>
-                </b-col>
-                <b-col cols="12" md="3" class="border" id="middle">
-                  <b-row>
-                    <CampaignsCard 
-                        thumbnail="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-                        title="SPRING/SUMMER 2020"
-                      />
-                      <CampaignsCard 
-                        thumbnail="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-                        title="SPRING/SUMMER 2020"
-                      />
-                      <CampaignsCard 
-                        thumbnail="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-                        title="SPRING/SUMMER 2020"
-                      />
-                      <CampaignsCard 
-                        thumbnail="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-                        title="SPRING/SUMMER 2020"
-                      />
-                      <CampaignsCard 
-                        thumbnail="https://static.dezeen.com/uploads/2019/09/parsons-fashion-show-2019-new-york-city-usa-dezeen-2364-meg-calloway2-852x1278.jpg"
-                        title="SPRING/SUMMER 2020"
-                      />   
-                  </b-row>
-                </b-col>
-                <b-col cols="12" md="3" class="border" id="right">
+        <div class="page-wrap">
+          <Header />
+            <!-- Mobile View  -->
+            <mq-layout mq="sm">
+                <LookbookMobile />
+                <CampaignsMobile />
+                <StoriesMobile />
+                <InstagramMobile />
+            </mq-layout>
+            
+            <!-- Desktop View  -->
+            <mq-layout mq="lg">
+                <Titles />
+                <h2 v-for="(lookbookItem, index) in lookbooks" :key="index">
+                  {{lookbookItem.fields.itemTitle}}
+                </h2>
+                <b-container fluid class="app_page">
                     <b-row>
-                      <Stories
-                        title="SPRING/SUMMER 2020"
-                       />
-                    </b-row>
-                </b-col> 
-            </b-row> 
-        </b-container>
-
-        <Footer />   
-        
+                        <b-col cols="12" md="6" class="" id="left">
+                          <b-row>
+                            <LookbookCard 
+                              thumbnail="https://static.dezeen.com/uploads/2019/09/parsons-fashion-show-2019-new-york-city-usa-dezeen-2364-meg-calloway2-852x1278.jpg"
+                              title="FW19/20 BLAZER"
+                              price="2.300 RON"
+                            />
+                            <LookbookCard 
+                              thumbnail="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+                              title="FW19/20 BLAZER"
+                              price="2.300 RON"
+                            />
+                            <LookbookCard 
+                              thumbnail="https://static.dezeen.com/uploads/2019/09/parsons-fashion-show-2019-new-york-city-usa-dezeen-2364-meg-calloway2-852x1278.jpg"
+                              title="FW19/20 BLAZER"
+                              price="2.300 RON"
+                            />
+                            <LookbookCard 
+                              thumbnail="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+                              title="FW19/20 BLAZER"
+                              price="2.300 RON"
+                            />
+                            <LookbookCard 
+                              thumbnail="https://static.dezeen.com/uploads/2019/09/parsons-fashion-show-2019-new-york-city-usa-dezeen-2364-meg-calloway2-852x1278.jpg"
+                              title="FW19/20 BLAZER"
+                              price="2.300 RON"
+                            />
+                            <LookbookCard 
+                              thumbnail="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+                              title="FW19/20 BLAZER"
+                              price="2.300 RON"
+                            />
+                            <LookbookCard 
+                              thumbnail="https://static.dezeen.com/uploads/2019/09/parsons-fashion-show-2019-new-york-city-usa-dezeen-2364-meg-calloway2-852x1278.jpg"
+                              title="FW19/20 BLAZER"
+                              price="2.300 RON"
+                            />
+                            <LookbookCard 
+                              thumbnail="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+                              title="FW19/20 BLAZER"
+                              price="2.300 RON"
+                            />
+                          </b-row>
+                        </b-col>
+                        <b-col cols="12" md="3" class="border" id="middle">
+                          <b-row>
+                            <CampaignsCard 
+                                thumbnail="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+                                title="SPRING/SUMMER 2020"
+                              />
+                              <CampaignsCard 
+                                thumbnail="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+                                title="SPRING/SUMMER 2020"
+                              />
+                              <CampaignsCard 
+                                thumbnail="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+                                title="SPRING/SUMMER 2020"
+                              />
+                              <CampaignsCard 
+                                thumbnail="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+                                title="SPRING/SUMMER 2020"
+                              />
+                              <CampaignsCard 
+                                thumbnail="https://static.dezeen.com/uploads/2019/09/parsons-fashion-show-2019-new-york-city-usa-dezeen-2364-meg-calloway2-852x1278.jpg"
+                                title="SPRING/SUMMER 2020"
+                              />   
+                          </b-row>
+                        </b-col>
+                        <b-col cols="12" md="3" class="border" id="right">
+                            <b-row>
+                              <Stories
+                                title="SPRING/SUMMER 2020"
+                              />
+                            </b-row>
+                        </b-col> 
+                    </b-row> 
+                </b-container>
+            </mq-layout>
+          </div>
+          <Footer />   
   </section>
 </template>
 
@@ -94,6 +108,14 @@
   import CampaignsCard from '@/components/CampaignsCard'
   import Stories from '@/components/Stories'
   import Footer from '@/components/Footer'
+  import LookbookMobile from '@/components/mobile/LookbookMobile'
+  import CampaignsMobile from '@/components/mobile/CampaignsMobile'
+  import StoriesMobile from '@/components/mobile/StoriesMobile'
+  import InstagramMobile from '@/components/mobile/InstagramMobile'
+  import client from '@/plugins/contentful'
+  // import {createClient} from '@/plugins/contentful.js'
+
+  // const client = createClient()
 
   export default {
     components: {
@@ -102,22 +124,15 @@
       LookbookCard,
       CampaignsCard,
       Stories,
-      Footer
-    }
+      Footer,
+      LookbookMobile,
+      CampaignsMobile,
+      StoriesMobile,
+      InstagramMobile
+    },
   }
 
-  // const contentful = require('contentful')
-
-  // const client = contentful.createClient({
-  //   space: '6580dm5jk20d',
-  //   environment: 'master', // defaults to 'master' if not set
-  //   accessToken: '4FsCxM63XHlG6O-h5dvdpzVz25j5u8IadghfkuQOcz0'
-  // })
-
-  // client.getEntries()
-  // .then((response) => console.log(response.items))
-  // .catch(console.error)
-
+  
 </script>
 
 
@@ -191,7 +206,16 @@
         overflow-y: scroll;
         
     }
+
 }
+
+ @media only screen and (max-width: 600px) {
+    .page-wrap {
+      min-height: 100%;
+      margin-bottom: 245px;
+    }
+ }
+
 
     #left {
         height: auto;
@@ -210,25 +234,27 @@
     }
 
 
-a:link {
-  text-decoration: none;
-  color:black;
-  cursor:default
-}
+    a:link {
+      text-decoration: none;
+      color:black!important;
+      cursor:default
+    }
 
-a:visited {
-  text-decoration: none;
-  color:black;
-}
+    a:visited {
+      text-decoration: none;
+      color:black;
+    }
 
-a:hover {
-  text-decoration: none;
-  color:black;
-}
+    a:hover {
+      text-decoration: none;
+      color:black;
+    }
 
-a:active {
-  text-decoration: none;
-  color:black;
-}
+    a:active {
+      text-decoration: none;
+      color:black;
+    }
+
+  
 
 </style>

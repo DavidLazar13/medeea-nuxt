@@ -1,35 +1,51 @@
 <template>
   <section>
-        <Header />
-        <Titles />
-        <b-container fluid class="app_page">
-            <b-row>
-                <b-col cols="6" class="border" id="left">
-                  <b-row>
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                  </b-row>
-                </b-col>
-                <b-col cols="3" class="border pt-3 pb-4" id="middle">
-                    <div>
-                        <p class="mb-0 pb-0">FW19/20 BLAZER</p>
-                        <p class="pt-0 mt-0">2.300 RON</p>
-                    </div>
-                    <div class="pt-1 mr-4">
-                        <p class="mb-0 pb-0 uppercase">Suit pant in refined wool WITH custom 
-                          pinstripe fabric, selvage curved seam. </p>
-                    </div>
-                </b-col>
-                <b-col cols="3" class="border pt-3 pb-4" id="right">
-                    <router-link to="/">
-                              <p>BACK</p>
-                    </router-link>
-                </b-col> 
-            </b-row> 
-        </b-container>
-
+        <div class="page-wrap">
+          <Header />
+          <mq-layout mq="sm">
+            <TitleMobile title="LOOKBOOK"/>
+            <DetailsMobile/>
+            <PictureCard />
+            <PictureCard />
+            <PictureCard />
+            <PictureCard />
+            <PictureCard />
+            <CampaignsMobile />
+            <StoriesMobile />
+            <InstagramMobile />
+          </mq-layout>
+          
+          <mq-layout mq="lg">
+            <Titles />
+            <b-container fluid class="app_page">
+                <b-row>
+                    <b-col cols="6" class="border" id="left">
+                      <b-row>
+                        <ProductCard />
+                        <ProductCard />
+                        <ProductCard />
+                        <ProductCard />
+                      </b-row>
+                    </b-col>
+                    <b-col cols="3" class="border pt-3 pb-4" id="middle">
+                        <div>
+                            <p class="mb-0 pb-0">FW19/20 BLAZER</p>
+                            <p class="pt-0 mt-0">2.300 RON</p>
+                        </div>
+                        <div class="pt-1 mr-4">
+                            <p class="mb-0 pb-0 uppercase">Suit pant in refined wool WITH custom 
+                              pinstripe fabric, selvage curved seam. </p>
+                        </div>
+                    </b-col>
+                    <b-col cols="3" class="border pt-3 pb-4" id="right">
+                        <router-link to="/">
+                                  <p>BACK</p>
+                        </router-link>
+                    </b-col> 
+                </b-row> 
+            </b-container>
+          </mq-layout>
+        </div>
         <Footer />   
   </section>
 </template>
@@ -39,13 +55,25 @@
   import Titles from '@/components/Titles'
   import Footer from '@/components/Footer'
   import ProductCard from '@/components/ProductCard'
+  import TitleMobile from '@/components/mobile/TitleMobile'
+  import DetailsMobile from '@/components/mobile/DetailsMobile'
+  import PictureCard from '@/components/mobile/PictureCard'
+  import CampaignsMobile from '@/components/mobile/CampaignsMobile'
+  import StoriesMobile from '@/components/mobile/StoriesMobile'
+  import InstagramMobile from '@/components/mobile/InstagramMobile'
 
   export default {
       components: {
         Header,
         Titles,
         Footer,
-        ProductCard
+        ProductCard,
+        TitleMobile,
+        DetailsMobile,
+        PictureCard,
+        CampaignsMobile,
+        StoriesMobile,
+        InstagramMobile
     }
   }
 
