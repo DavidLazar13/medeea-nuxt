@@ -2,7 +2,7 @@
  
         <b-col cols="12" md="6" class="pic-card border-sides">
             <nuxt-link to="/product">
-                <img class="image" src="/lookbook/11_92A6807.jpg"/>
+                <img class="image" :src="thumbnail"/>
             </nuxt-link>
             <div class="card-body">
                 <p class="mb-0 pb-0">{{title}}</p>

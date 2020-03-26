@@ -13,52 +13,16 @@
             <!-- Desktop View  -->
             <mq-layout mq="lg">
                 <Titles />
-                <!-- <h2 v-for="(lookbookItem, index) in lookbooks" :key="index">
-                  {{lookbookItem.fields.itemTitle}}
-                </h2> -->
                 <b-container fluid class="app_page">
                     <b-row>
                         <b-col cols="12" md="6" class="" id="left">
                           <b-row>
                             <LookbookCard 
-                              thumbnail="https://static.dezeen.com/uploads/2019/09/parsons-fashion-show-2019-new-york-city-usa-dezeen-2364-meg-calloway2-852x1278.jpg"
-                              title="FW19/20 BLAZER"
-                              price="2.300 RON"
-                            />
-                            <LookbookCard 
-                              thumbnail="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-                              title="FW19/20 BLAZER"
-                              price="2.300 RON"
-                            />
-                            <LookbookCard 
-                              thumbnail="https://static.dezeen.com/uploads/2019/09/parsons-fashion-show-2019-new-york-city-usa-dezeen-2364-meg-calloway2-852x1278.jpg"
-                              title="FW19/20 BLAZER"
-                              price="2.300 RON"
-                            />
-                            <LookbookCard 
-                              thumbnail="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-                              title="FW19/20 BLAZER"
-                              price="2.300 RON"
-                            />
-                            <LookbookCard 
-                              thumbnail="https://static.dezeen.com/uploads/2019/09/parsons-fashion-show-2019-new-york-city-usa-dezeen-2364-meg-calloway2-852x1278.jpg"
-                              title="FW19/20 BLAZER"
-                              price="2.300 RON"
-                            />
-                            <LookbookCard 
-                              thumbnail="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-                              title="FW19/20 BLAZER"
-                              price="2.300 RON"
-                            />
-                            <LookbookCard 
-                              thumbnail="https://static.dezeen.com/uploads/2019/09/parsons-fashion-show-2019-new-york-city-usa-dezeen-2364-meg-calloway2-852x1278.jpg"
-                              title="FW19/20 BLAZER"
-                              price="2.300 RON"
-                            />
-                            <LookbookCard 
-                              thumbnail="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-                              title="FW19/20 BLAZER"
-                              price="2.300 RON"
+                              v-for="(item, index) in items"
+                              :thumbnail="item.fields.thumbnailPicture.fields.file.url"
+                              :title="item.fields.item"
+                              :price="item.fields.price"
+                              :key="index"
                             />
                           </b-row>
                         </b-col>
@@ -134,13 +98,12 @@
         contentfulClient.getEntries({
           'content_type': 'lookbook',
           order: '-sys.createdAt'
-        })
+        }),
       ]).then(([lookbooks]) => {
         // return data that should be available
         // in the template
-        console.log(lookbooks)
         return {
-          lookbookItem: lookbooks.items
+          lookbooksItems: lookbooks.items,
         }
       }).catch(console.error)
     }
