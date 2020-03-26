@@ -13,9 +13,9 @@
             <!-- Desktop View  -->
             <mq-layout mq="lg">
                 <Titles />
-                <h2 v-for="(lookbookItem, index) in lookbooks" :key="index">
+                <!-- <h2 v-for="(lookbookItem, index) in lookbooks" :key="index">
                   {{lookbookItem.fields.itemTitle}}
-                </h2>
+                </h2> -->
                 <b-container fluid class="app_page">
                     <b-row>
                         <b-col cols="12" md="6" class="" id="left">
@@ -112,10 +112,10 @@
   import CampaignsMobile from '@/components/mobile/CampaignsMobile'
   import StoriesMobile from '@/components/mobile/StoriesMobile'
   import InstagramMobile from '@/components/mobile/InstagramMobile'
-  import client from '@/plugins/contentful'
-  // import {createClient} from '@/plugins/contentful.js'
-
-  // const client = createClient()
+  import contentful from '../plugins/contentful'
+  
+  console.log(contenful)
+  const contentfulClient = contenful.createClient()
 
   export default {
     components: {
@@ -130,9 +130,26 @@
       StoriesMobile,
       InstagramMobile
     },
+    asyncData ({env}) {
+      return Promise.all([
+        // fetch all blog posts sorted by creation date
+        contentfulClient.getEntries({
+          'content_type': 'lookbook',
+          order: '-sys.createdAt'
+        })
+      ]).then(([lookbooks]) => {
+        // return data that should be available
+        // in the template
+        console.log(lookbooks)
+        return {
+          lookbookItem: lookbooks.items
+        }
+      }).catch(console.error)
+    }
+   
   }
+   
 
-  
 </script>
 
 
