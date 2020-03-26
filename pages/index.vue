@@ -112,11 +112,9 @@
   import CampaignsMobile from '@/components/mobile/CampaignsMobile'
   import StoriesMobile from '@/components/mobile/StoriesMobile'
   import InstagramMobile from '@/components/mobile/InstagramMobile'
-  import contentful from '../plugins/contentful'
+  import { createClient } from '../plugins/contentful'
   
-  console.log(contenful)
-  const contentfulClient = contenful.createClient()
-
+  const contentfulClient = createClient()
   export default {
     components: {
       Header,
