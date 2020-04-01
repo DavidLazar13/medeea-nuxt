@@ -99,15 +99,20 @@
           'content_type': 'lookbook',
           order: '-sys.createdAt'
         }),
-      ]).then(([lookbooks]) => {
+         // fetch all blog posts sorted by creation date
+        contentfulClient.getEntries({
+          'content_type': 'campaign',
+          order: '-sys.createdAt'
+        })
+      ]).then(([lookbooks, campaigns]) => {
         // return data that should be available
         // in the template
         return {
-          lookbooksItems: lookbooks.items,
+          items: lookbooks.items,
+          campaignItems: campaigns.items,
         }
       }).catch(console.error)
     }
-   
   }
    
 
@@ -180,7 +185,6 @@
     #right {
         max-height:90vh;
         bottom: 0;
-      
         overflow-y: scroll;
         
     }
