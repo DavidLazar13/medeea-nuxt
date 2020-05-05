@@ -1,5 +1,5 @@
 <template>
-    <b-col cols="12" class="pic-card ">
+    <b-col cols="12" class="pic-card border-left">
         <nuxt-link :to="'/campaign/' + slug">
             <img class="image" :src="thumbnail"/>
         </nuxt-link>

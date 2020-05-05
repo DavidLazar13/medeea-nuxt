@@ -32,6 +32,7 @@
 
 
 <style>
+
     .details-width{
         max-width: 500px;
     }
@@ -55,6 +56,9 @@
         }
         .footer-row {
         height: inherit;
+        }
+        .border-left{
+            border-left: none !important;
         }
     } 
     

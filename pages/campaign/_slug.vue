@@ -3,7 +3,7 @@
         <div class="page-wrap">
           <Header />
           <mq-layout mq="sm">
-            <TitleMobile title="CAMPAIGNS"/>
+            <TitleMobile title="CAMPAIGNS" class="margin-top-header"/>
             <DetailsMobile
                 :title="campaigns.fields.campaignTitle"
                 :description="campaigns.fields.details"
@@ -34,7 +34,7 @@
                           />
                         </b-row>
                       </b-col>
-                      <b-col cols="3" class="border-right sticky pt-3 pb-4 padding-left">
+                      <b-col cols="3" class="border-left border-right sticky pt-3 pb-4 padding-left">
                           <div>
                               <p>{{ campaigns.fields.campaignTitle }}</p>
                           </div>

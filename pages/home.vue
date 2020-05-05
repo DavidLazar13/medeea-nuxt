@@ -4,7 +4,7 @@
           <Header />
             <!-- Mobile View  -->
             <mq-layout mq="sm">
-                <LookbookMobile class="margin-top">
+                <LookbookMobile class="margin-top-header">
                   <LookbookCard 
                               v-for="(item, index) in items"
                               :thumbnail="item.fields.thumbnailPicture.fields.file.url"
@@ -142,11 +142,9 @@
 
 
 <style>
-.margin-top{
-        margin-top: 85px;
-    }
-
-
+.margin-top-header{
+  margin-top: 81px;
+}
 .container {
   min-height: 100%;
   margin: 0 auto;

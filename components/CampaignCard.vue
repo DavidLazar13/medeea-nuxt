@@ -1,6 +1,6 @@
 <template>
  
-        <b-col cols="6" class="pic-card border-top border-right">
+        <b-col cols="6" class="pic-card border-top border-left">
             
             <img class="image" :src="picture"/>
 

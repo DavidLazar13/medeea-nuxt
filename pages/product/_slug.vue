@@ -3,7 +3,7 @@
         <div class="page-wrap">
           <Header />
           <mq-layout mq="sm">
-            <TitleMobile title="LOOKBOOK"/>
+            <TitleMobile title="LOOKBOOK" class="margin-top-header"/>
             <DetailsMobile
               :title="lookbook.fields.item"
               :price="lookbook.fields.price"
@@ -23,7 +23,7 @@
             <Titles />
             <b-container fluid class="app_page">
                 <b-row>
-                    <b-col cols="6" class="border-right" id="left">
+                    <b-col cols="6" class="" id="left">
                       <b-row>
                         <ProductCard 
                             v-for="item in lookbook.fields.presentationPictures"
@@ -32,7 +32,7 @@
                         />
                       </b-row>
                     </b-col>
-                    <b-col cols="3" class="border-right pt-3 pb-4 padding-left" id="middle">
+                    <b-col cols="3" class="border-left border-right pt-3 pb-4 padding-left" id="middle">
                         <div>
                             <p class="mb-0 pb-0 text-uppercase">{{ lookbook.fields.item}}</p>
                             <p class="pt-0 mt-0 text-uppercase">{{ lookbook.fields.price}}</p>
