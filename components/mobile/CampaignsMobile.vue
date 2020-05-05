@@ -1,35 +1,12 @@
 <template>
     <b-container fluid>
             <b-row @click="attachDisplay = !attachDisplay">
-                <b-col cols="12" class="border pt-3 pb-4">
-                    <p class="font-size-32">CAMPAIGNS</p>
+                <b-col cols="12" class="border-top pt-3 pb-4 padding-left">
+                    <p class="font-size-32 pb-3">CAMPAIGNS</p>
                 </b-col>
             </b-row>
-            <b-row :class="{display: attachDisplay}">
-                <CampaignsCard 
-                              thumbnail="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-                              title="SPRING/SUMMER 2020"
-                            />
-                <CampaignsCard 
-                              thumbnail="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-                              title="SPRING/SUMMER 2020"
-                            />
-                <CampaignsCard 
-                              thumbnail="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-                              title="SPRING/SUMMER 2020"
-                            />
-                <CampaignsCard 
-                              thumbnail="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-                              title="SPRING/SUMMER 2020"
-                            />
-                <CampaignsCard 
-                              thumbnail="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-                              title="SPRING/SUMMER 2020"
-                            />
-                <CampaignsCard 
-                              thumbnail="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-                              title="SPRING/SUMMER 2020"
-                            />
+            <b-row :class="{display: attachDisplay}" class="border-top">
+                <slot></slot>
             </b-row>
     </b-container>
 </template>

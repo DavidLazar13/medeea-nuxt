@@ -1,12 +1,12 @@
 <template>
  
-        <b-col cols="12" md="6" class="pic-card border-sides">
-            <nuxt-link to="/product">
+        <b-col cols="12" md="6" class="pic-card border-right">
+            <nuxt-link :to="'/product/'+ slug">
                 <img class="image" :src="thumbnail"/>
             </nuxt-link>
-            <div class="card-body">
-                <p class="mb-0 pb-0">{{title}}</p>
-                <p class="pt-0 mt-0">{{price}}</p>
+            <div class="card-body padding-left">
+                <p class="mb-0 pb-0 text-uppercase">{{title}}</p>
+                <p class="pt-0 mt-0 mb-0 text-uppercase">{{price}}</p>
             </div>
         </b-col>
     
@@ -15,7 +15,7 @@
 
 <script>
     export default {
-        props: ['thumbnail', 'title', 'price']
+        props: ['thumbnail', 'title', 'price' ,'slug']
     }
 </script>
 
@@ -38,7 +38,6 @@
     .border-sides{
         border-right: 1px solid black!important;
         border-left: 1px solid black!important;
-        border-collapse: collapse!important;
     }
   
 </style>

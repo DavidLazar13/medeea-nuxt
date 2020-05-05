@@ -1,8 +1,8 @@
 <template>
     <b-col cols="12" class="pic-card">
-        <img class="image" src="/elle_romania.jpg"/>
-        <div class="card-body">
-            <p class="mb-0 pb-0">{{title}}</p>
+        <img class="image" :src="thumbnail">
+        <div class="card-body padding-left">
+            <p class="mb-0 pb-3 text-uppercase">{{title}}</p>
         </div>
     </b-col>
 </template>

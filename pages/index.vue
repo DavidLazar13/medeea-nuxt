@@ -1,242 +1,27 @@
 <template>
-  <section>
-        <div class="page-wrap">
-          <Header />
-            <!-- Mobile View  -->
-            <mq-layout mq="sm">
-                <LookbookMobile />
-                <CampaignsMobile />
-                <StoriesMobile />
-                <InstagramMobile />
-            </mq-layout>
-            
-            <!-- Desktop View  -->
-            <mq-layout mq="lg">
-                <Titles />
-                <b-container fluid class="app_page">
-                    <b-row>
-                        <b-col cols="12" md="6" class="" id="left">
-                          <b-row>
-                            <LookbookCard 
-                              v-for="(item, index) in items"
-                              :thumbnail="item.fields.thumbnailPicture.fields.file.url"
-                              :title="item.fields.item"
-                              :price="item.fields.price"
-                              :key="index"
-                            />
-                          </b-row>
-                        </b-col>
-                        <b-col cols="12" md="3" class="border" id="middle">
-                          <b-row>
-                            <CampaignsCard 
-                                thumbnail="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-                                title="SPRING/SUMMER 2020"
-                              />
-                              <CampaignsCard 
-                                thumbnail="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-                                title="SPRING/SUMMER 2020"
-                              />
-                              <CampaignsCard 
-                                thumbnail="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-                                title="SPRING/SUMMER 2020"
-                              />
-                              <CampaignsCard 
-                                thumbnail="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-                                title="SPRING/SUMMER 2020"
-                              />
-                              <CampaignsCard 
-                                thumbnail="https://static.dezeen.com/uploads/2019/09/parsons-fashion-show-2019-new-york-city-usa-dezeen-2364-meg-calloway2-852x1278.jpg"
-                                title="SPRING/SUMMER 2020"
-                              />   
-                          </b-row>
-                        </b-col>
-                        <b-col cols="12" md="3" class="border" id="right">
-                            <b-row>
-                              <Stories
-                                title="SPRING/SUMMER 2020"
-                              />
-                            </b-row>
-                        </b-col> 
-                    </b-row> 
-                </b-container>
-            </mq-layout>
-          </div>
-          <Footer />   
-  </section>
+<router-link to="/home">
+    <div class="bg">
+        <img class="logo-landing" src="~/~/assets/Medeea_Stripe_Black.png">
+    </div>
+</router-link>
 </template>
 
-<script>
-  import Header from '@/components/Header'
-  import Titles from '@/components/Titles'
-  import LookbookCard from '@/components/LookbookCard'
-  import CampaignsCard from '@/components/CampaignsCard'
-  import Stories from '@/components/Stories'
-  import Footer from '@/components/Footer'
-  import LookbookMobile from '@/components/mobile/LookbookMobile'
-  import CampaignsMobile from '@/components/mobile/CampaignsMobile'
-  import StoriesMobile from '@/components/mobile/StoriesMobile'
-  import InstagramMobile from '@/components/mobile/InstagramMobile'
-  import { createClient } from '../plugins/contentful'
-  
-  const contentfulClient = createClient()
-  export default {
-    components: {
-      Header,
-      Titles,
-      LookbookCard,
-      CampaignsCard,
-      Stories,
-      Footer,
-      LookbookMobile,
-      CampaignsMobile,
-      StoriesMobile,
-      InstagramMobile
-    },
-    asyncData ({env}) {
-      return Promise.all([
-        // fetch all blog posts sorted by creation date
-        contentfulClient.getEntries({
-          'content_type': 'lookbook',
-          order: '-sys.createdAt'
-        }),
-         // fetch all blog posts sorted by creation date
-        contentfulClient.getEntries({
-          'content_type': 'campaign',
-          order: '-sys.createdAt'
-        })
-      ]).then(([lookbooks, campaigns]) => {
-        // return data that should be available
-        // in the template
-        return {
-          items: lookbooks.items,
-          campaignItems: campaigns.items,
-        }
-      }).catch(console.error)
-    }
-  }
-   
 
-</script>
-
-
-<style>
-.container {
-  min-height: 100%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+<style scoped>
+.logo-landing{
+    margin: 15px 0 0 27px;
+    width: 120px;
 }
+.bg {
+  /* The image used */
+  background-image: url('/landing-page.png');
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+  /* Full height */
+  height: 100vh;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-
-
-
-
-.app_page {
-    margin: 0%;
-    overflow: hidden;
-    min-height: calc(100vh - 141px);
-    
-}
-
-::-webkit-scrollbar {
-    display: none;
-}
-
-@media (min-width: 768px) {
-    #left {
-        max-height:90vh;
-        bottom: 0;
-        
-       
-        overflow-y: scroll;
-    }
-
-    #middle {
-        max-height:90vh;
-        bottom: 0;
-    
-       
-        overflow-y: scroll;
-    }
-
-    #right {
-        max-height:90vh;
-        bottom: 0;
-        overflow-y: scroll;
-        
-    }
-
-}
-
- @media only screen and (max-width: 600px) {
-    .page-wrap {
-      min-height: 100%;
-      margin-bottom: 245px;
-    }
- }
-
-
-    #left {
-        height: auto;
-    }
-
-    #middle {
-        height: auto;
-    }
-
-    #right {
-        height: auto;
-    }
-
-    h4 {
-        padding: 10px 0;
-    }
-
-
-    a:link {
-      text-decoration: none;
-      color:black!important;
-      cursor:default
-    }
-
-    a:visited {
-      text-decoration: none;
-      color:black;
-    }
-
-    a:hover {
-      text-decoration: none;
-      color:black;
-    }
-
-    a:active {
-      text-decoration: none;
-      color:black;
-    }
-
-  
-
 </style>

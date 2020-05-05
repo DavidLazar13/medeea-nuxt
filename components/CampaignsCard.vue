@@ -1,17 +1,17 @@
 <template>
-    <b-col cols="12" class="pic-card">
-        <nuxt-link to="/campaign">
-            <img class="image" src="/lookbook/11_92A6856.jpg"/>
+    <b-col cols="12" class="pic-card ">
+        <nuxt-link :to="'/campaign/' + slug">
+            <img class="image" :src="thumbnail"/>
         </nuxt-link>
-        <div class="card-body">
-            <p class="mb-0 pb-0">{{title}}</p>
+        <div class="card-body padding-left">
+            <p class="mb-0 pb-3 text-uppercase">{{title}}</p>
         </div>
     </b-col>
 </template>
 
 <script>
     export default {
-        props: ['thumbnail', 'title']
+        props: ['thumbnail', 'title', 'slug']
     }
 </script>
 

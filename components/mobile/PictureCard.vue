@@ -2,7 +2,7 @@
  
         <b-col cols="12" class="pic-card">
             
-            <img class="image" src="/lookbook/11_92A6807.jpg"/>
+            <img class="image" :src="picture"/>
 
         </b-col>
     
@@ -10,7 +10,9 @@
 </template>
 
 <script>
-    
+     export default {
+        props: ['picture']
+    }
 </script>
 
 <style scoped>

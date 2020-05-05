@@ -60,10 +60,45 @@ html, body {
 
 .border {
   border: 1px solid black!important;
-  border-collapse: collapse!important;
+}
+
+.border-top-bottom{
+  border-top: 1px solid black!important;
+  border-bottom: 1px solid black!important;
+}
+
+.border-top{
+  border-top: 1px solid black!important;
+}
+
+.border-bottom{
+  border-bottom: 1px solid black!important;
+}
+
+.border-left{
+  border-left: 1px solid black!important;
+}
+
+.border-right{
+  border-right: 1px solid black!important;
+}
+
+.border-bottom-x2{
+  border-bottom: 2px solid black!important;
+}
+
+.border-top-x2{
+  border-top: 2px solid black!important;
 }
 
  .uppercase {
    text-transform: uppercase;
  }
+
+@media only screen and (max-width: 600px) {
+  .border-right{
+    border-right: none!important;
+  }
+}
+ 
 </style>

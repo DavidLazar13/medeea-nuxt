@@ -1,14 +1,12 @@
 <template>
     <b-container fluid>
             <b-row @click="attachDisplay = !attachDisplay">
-                <b-col cols="12" class="border pt-3 pb-4">
-                    <p class="font-size-32">STORIES</p>
+                <b-col cols="12" class="border-top pt-3 pb-4 padding-left">
+                    <p class="font-size-32 pb-3">STORIES</p>
                 </b-col>
             </b-row>
-            <b-row :class="{display: attachDisplay}">
-                <Stories
-                              title="SPRING/SUMMER 2020"
-                            />
+            <b-row :class="{display: attachDisplay}" class="border-top">
+                <slot></slot>
             </b-row>
     </b-container>
 </template>

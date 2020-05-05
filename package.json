@@ -11,12 +11,14 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@contentful/rich-text-html-renderer": "^13.4.0",
     "@nuxtjs/dotenv": "^1.4.1",
     "bootstrap": "^4.1.3",
     "bootstrap-vue": "^2.0.0",
     "contentful": "^7.14.0",
     "nuxt": "^2.0.0",
-    "nuxt-mq": "^2.0.1"
+    "nuxt-mq": "^2.0.1",
+    "vue-markdown": "^2.2.4"
   },
   "devDependencies": {}
 }

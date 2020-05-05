@@ -1,15 +1,16 @@
 <template>
     <b-container fluid >
             <b-row class="title-container-h">
-                <b-col cols="12" class="border pt-3 pb-4">
+                <b-col cols="12" class="border-bottom mt-1 border-top pt-3 pb-4 padding-left">
                     <div>
-                            <p class="mb-0 pb-0">FW19/20 BLAZER</p>
-                            <p class="pt-0 mt-0">2.300 RON</p>
-                        </div>
-                        <div class="pt-1 pb-4">
-                            <p class="mb-0 pb-0 uppercase">Suit pant in refined wool WITH custom 
-                              pinstripe fabric, selvage curved seam. </p>
-                        </div>
+                        <p class="mb-0 pb-0 uppercase">{{ title }}</p>
+                        <p class="mb-0 pb-0 uppercase">{{ price }}</p>
+                    </div>
+                    <div class="pt-1">
+                        <p class="mb-0 pb-0 uppercase">
+                            {{ description }}
+                         </p>
+                    </div>
                     </div>
                 </b-col>
             </b-row>
@@ -17,7 +18,9 @@
 </template>
 
 <script>
-    
+    export default {
+        props: ['title', 'price', 'description']
+    }
 </script>
 
 <style scoped>

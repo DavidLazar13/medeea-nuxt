@@ -2,8 +2,8 @@
     <b-container fluid>
             <a v-bind:href="link">
                 <b-row>
-                    <b-col cols="12" class="border pt-3 pb-4">
-                        <p class="font-size-32">INSTAGRAM</p>
+                    <b-col cols="12" class="border-top border-bottom pt-3 pb-4 padding-left">
+                        <p class="font-size-32 pb-3">INSTAGRAM</p>
                     </b-col>
                 </b-row>
             </a>

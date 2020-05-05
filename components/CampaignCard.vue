@@ -1,8 +1,8 @@
 <template>
  
-        <b-col cols="6" class="pic-card border">
+        <b-col cols="6" class="pic-card border-top border-right">
             
-            <img class="image" src="/lookbook/11_92A6807.jpg"/>
+            <img class="image" :src="picture"/>
 
         </b-col>
     
@@ -11,7 +11,7 @@
 
 <script>
     export default {
-        props: ['thumbnail', 'title', 'price']
+        props: ['picture']
     }
 </script>
 
