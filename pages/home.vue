@@ -41,8 +41,10 @@
                 <b-container fluid class="app_page">
                     <b-row>
                         <b-col cols="12" md="6" class="" id="left">
-                          <b-row>
-                            <LookbookCard 
+                          <b-row class="first">
+                          
+                            <LookbookCard
+                              class="lookbook-card" 
                               v-for="(item, index) in items"
                               :thumbnail="item.fields.thumbnailPicture.fields.file.url"
                               :title="item.fields.item"
@@ -50,6 +52,7 @@
                               :slug="item.fields.slug"
                               :key="index"
                             />
+                          
                           </b-row>
                         </b-col>
                         <b-col cols="12" md="3" class="border-right" id="middle">
@@ -142,9 +145,15 @@
 
 
 <style>
+.first .lookbook-card:nth-child(2n+1){
+  border-right: 1px solid black;
+}
+
+
 .margin-top-header{
   margin-top: 81px;
 }
+
 .container {
   min-height: 100%;
   margin: 0 auto;
@@ -182,6 +191,7 @@
     margin: 0%;
     overflow: hidden;
     min-height: calc(100vh - 141px);
+    margin-top: 112px;
     
 }
 

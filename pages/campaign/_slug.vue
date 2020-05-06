@@ -27,7 +27,7 @@
               <b-row>
                 <div id="scroll-area">
                   <b-row>
-                      <b-col cols="6" class="border-right">
+                      <b-col cols="6">
                         <b-row>
                           <ProductCard 
                             :thumbnail="campaigns.fields.thumbnailPicture.fields.file.url"
@@ -168,7 +168,7 @@
     margin: 0%;
     overflow: hidden;
     min-height: calc(100vh - 141px);
-    
+    margin-top: 112px;
 }
 
 ::-webkit-scrollbar {

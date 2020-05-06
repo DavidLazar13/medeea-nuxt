@@ -12,7 +12,7 @@
                 </b-row>
             </mq-layout>
             <mq-layout mq="lg">
-                <b-row>
+                <b-row class="fixed-navbar">
                     <b-col cols="12" md="6" class=" border-bottom  pt-3">
                         <div class="padding-left pt-1">
                             <router-link to="/home">
@@ -45,14 +45,7 @@
 </script>
 
 <style scoped>
-    .fixed-navbar {
-    overflow: hidden;
-    background-color: white;
-    position: fixed; /* Set the navbar to fixed position */
-    top: 0; /* Position the navbar at the top of the page */
-    width: 100%; /* Full width */
-    z-index: 100;
-    }
+    
 
     .padding-left{
         padding-left: 12px;

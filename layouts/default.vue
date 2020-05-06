@@ -95,6 +95,23 @@ html, body {
    text-transform: uppercase;
  }
 
+  .fixed-navbar {
+    overflow: hidden;
+    background-color: white;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    z-index: 100;
+    }
+  
+  .app_page {
+    margin: 0%;
+    overflow: hidden;
+    min-height: calc(100vh - 141px);
+    margin-top: 112px;
+    
+}
+    
 @media only screen and (max-width: 600px) {
   .border-right{
     border-right: none!important;
