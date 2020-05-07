@@ -50,8 +50,9 @@
                   </b-row> 
                   <b-row>
                       <b-col cols="12" class="" >
-                        <b-row>
+                        <b-row class="first">
                           <CampaignCard 
+                               class="campaign-card"
                                v-for="item in campaigns.fields.galery"
                                :picture="item.fields.file.url"
                                :key="item"
@@ -124,6 +125,11 @@
 
 
 <style>
+
+.first .campaign-card:nth-child(2n){
+  border-left: 1px solid black;
+}
+
 .sticky{
   height: 91vh;
   position: sticky;

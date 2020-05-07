@@ -40,9 +40,8 @@
                 <Titles />
                 <b-container fluid class="app_page">
                     <b-row>
-                        <b-col cols="12" md="6" class="" id="left">
+                        <b-col cols="12" md="6" id="left">
                           <b-row class="first">
-                          
                             <LookbookCard
                               class="lookbook-card" 
                               v-for="(item, index) in items"
@@ -52,8 +51,8 @@
                               :slug="item.fields.slug"
                               :key="index"
                             />
-                          
                           </b-row>
+                         
                         </b-col>
                         <b-col cols="12" md="3" class="border-right" id="middle">
                           <b-row>
@@ -96,7 +95,7 @@
   import StoriesMobile from '@/components/mobile/StoriesMobile'
   import InstagramMobile from '@/components/mobile/InstagramMobile'
   import { createClient } from '../plugins/contentful'
-  
+
   const contentfulClient = createClient()
   export default {
     components: {
@@ -145,6 +144,11 @@
 
 
 <style>
+
+.pointer{
+  cursor:pointer;
+}
+
 .first .lookbook-card:nth-child(2n+1){
   border-right: 1px solid black;
 }
@@ -257,7 +261,6 @@
     a:link {
       text-decoration: none;
       color:black!important;
-      cursor:default
     }
 
     a:visited {
