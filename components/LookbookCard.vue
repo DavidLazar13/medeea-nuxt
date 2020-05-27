@@ -1,6 +1,6 @@
 <template>
  
-        <b-col cols="12" md="6" class="pic-card">
+        <b-col cols="12" md="6" class="pic-card border-right">
             <nuxt-link :to="'/product/'+ slug">
                 <img class="image" :src="thumbnail"/>
             </nuxt-link>

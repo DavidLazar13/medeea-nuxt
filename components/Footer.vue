@@ -1,7 +1,7 @@
 <template>
     <footer fluid class="footer container-fluid">
             <b-row class="footer-row">
-                <b-col cols="12" md="6" col- class="border-top  pt-3">
+                <b-col cols="12" md="6" col- class="border-top border-right pt-3">
                     <div class="py-1 px-3">
                         <div>
                             <p class="mb-0 pb-0">+40 723 983 828 </p>
@@ -13,7 +13,7 @@
                         </div>
                     </div>
                 </b-col>
-                <b-col cols="12" md="6" class="border-top border-left pt-3 d-flex">
+                <b-col cols="12" md="6" class="border-top pt-3 d-flex">
                     <div class="py-1 px-3 details-width">
                         <div>
                             <p>ALL CONTENTS OF THIS WEBSITE ARE THE PROPERTY OF MEDEEA. NO PART OF THIS SITE, INCLUDING ALL TEXT 

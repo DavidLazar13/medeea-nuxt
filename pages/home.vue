@@ -41,7 +41,7 @@
                 <Titles />
                 <b-container fluid class="app_page">
                     <b-row>
-                        <b-col cols="12" md="6" id="left">
+                        <b-col cols="12" md="6" id="left" class="">
                           <b-row class="first">
                             <LookbookCard
                               class="lookbook-card" 
@@ -52,7 +52,7 @@
                               :slug="item.fields.slug"
                               :key="index"
                             />
-                            <div class="load-more-btn text-center d-flex justify-content-center align-items-center" @click="loadMore()"><span>LOAD MORE</span></div>
+                            <div class="load-more-btn text-center d-flex justify-content-center align-items-center border-right" @click="loadMore()"><span>LOAD MORE</span></div>
                           </b-row>
                          
                         </b-col>
@@ -204,151 +204,3 @@
    
 
 </script>
-
-
-<style>
-.load-more-btn{
-  width: 100%;
-  border-top: black solid 1px;
-  height: 55px;
-  font-size: 10px;
-  font-weight: bold;
-}
-
-.pointer{
-  cursor:pointer;
-}
-
-.first .lookbook-card:nth-child(2n+1){
-  border-right: 1px solid black;
-}
-
-
-.margin-top-header{
-  margin-top: 81px;
-}
-
-.container {
-  min-height: 100%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-
-
-
-.app_page {
-    margin: 0%;
-    overflow: hidden;
-    min-height: calc(100vh - 141px);
-    margin-top: 112px;
-    
-}
-
-.font-size-32{
-    font-size: 18px;
-}
-
-::-webkit-scrollbar {
-    display: none;
-}
-
-@media (min-width: 768px) {
-    #left {
-        max-height:90vh;
-        bottom: 0;
-        
-       
-        overflow-y: scroll;
-    }
-
-    #middle {
-        max-height:90vh;
-        bottom: 0;
-    
-       
-        overflow-y: scroll;
-    }
-
-    #right {
-        max-height:90vh;
-        bottom: 0;
-        overflow-y: scroll;
-        
-    }
-
-}
-
- @media only screen and (max-width: 600px) {
-    .page-wrap {
-      min-height: 100%;
-      margin-bottom: 245px;
-      
-    }
- }
-
-
-    #left {
-        height: auto;
-    }
-
-    #middle {
-        height: auto;
-    }
-
-    #right {
-        height: auto;
-    }
-
-    h4 {
-        padding: 10px 0;
-    }
-
-
-    a:link {
-      text-decoration: none;
-      color:black !important;
-    }
-
-    a:visited {
-      text-decoration: none;
-      color:black !important;
-    }
-
-    a:hover {
-      text-decoration: none;
-      color:black !important;
-    }
-
-    a:active {
-      text-decoration: none;
-      color:black !important;
-    }
-
-  
-
-</style>

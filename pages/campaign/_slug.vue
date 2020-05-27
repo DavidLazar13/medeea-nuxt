@@ -46,14 +46,14 @@
               <b-row>
                 <div id="scroll-area">
                   <b-row>
-                      <b-col cols="6">
+                      <b-col cols="6" class="border-right">
                         <b-row>
                           <ProductCard 
                             :thumbnail="campaigns.fields.thumbnailPicture.fields.file.url"
                           />
                         </b-row>
                       </b-col>
-                      <b-col cols="3" class="border-left border-right sticky pt-3 pb-4 padding-left">
+                      <b-col cols="3" class="border-right sticky pt-3 pb-4 padding-left">
                           <div>
                               <p>{{ campaigns.fields.campaignTitle }}</p>
                           </div>
@@ -103,7 +103,7 @@
   import InstagramMobile from '@/components/mobile/InstagramMobile'
   import { createClient } from '@/plugins/contentful'
   import Stories from '@/components/Stories'
-  
+
   import VueMarkdown from 'vue-markdown'
 
   const contentfulClient = createClient()
@@ -163,7 +163,9 @@
 <style>
 
 .first .campaign-card:nth-child(2n){
-  border-left: 1px solid black;
+  -webkit-box-shadow: -1px 0px 0px 0px rgba(0,0,0,1);
+  -moz-box-shadow: -1px 0px 0px 0px rgba(0,0,0,1);
+  box-shadow: -1px 0px 0px 0px rgba(0,0,0,1);
 }
 
 .sticky{

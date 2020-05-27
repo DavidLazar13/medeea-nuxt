@@ -1,10 +1,10 @@
 <template>
     <b-container fluid >
             <b-row class="fixed-titles">
-                <b-col cols="6" class="border-bottom  pt-3 pb-4">
+                <b-col cols="6" class="border-bottom border-right pt-3 pb-4">
                     <p class="padding-left-titles p-titles">LOOKBOOK</p>
                 </b-col>
-                <b-col cols="3" class="border-bottom border-left border-right  pt-3 pb-4">
+                <b-col cols="3" class="border-bottom border-right  pt-3 pb-4">
                     <p class="padding-left-titles p-titles">CAMPAIGNS</p>
                 </b-col>
                 <b-col cols="3" class="border-bottom  pt-3 pb-4">
