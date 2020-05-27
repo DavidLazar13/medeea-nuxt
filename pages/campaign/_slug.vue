@@ -2,6 +2,8 @@
   <section>
         <div class="page-wrap">
           <Header />
+
+          <!-- Mobile View  -->
           <mq-layout mq="sm">
             <TitleMobile title="CAMPAIGNS" class="margin-top-header"/>
             <DetailsMobile
@@ -16,11 +18,28 @@
                 :picture="item.fields.file.url"
                 :key="item"
             />
-            <LookbookMobile class="border-top"/>
-            <StoriesMobile />
+            <LookbookMobile class="border-top">
+                  <LookbookCard 
+                              v-for="(item, index) in items"
+                              :thumbnail="item.fields.thumbnailPicture.fields.file.url"
+                              :title="item.fields.item"
+                              :price="item.fields.price"
+                              :slug="item.fields.slug"
+                              :key="index"
+                            />
+            </LookbookMobile>
+            <StoriesMobile>
+                  <Stories
+                                v-for="(storieItem, index) in storieItems"
+                                :thumbnail="storieItem.fields.image.fields.file.url"
+                                :title="storieItem.fields.title"
+                                :key="index"
+                              />
+                </StoriesMobile>
             <InstagramMobile />
           </mq-layout>
 
+          <!-- Desktop View  -->
           <mq-layout mq="lg">
             <Titles />
             <b-container fluid class="app_page">
@@ -83,6 +102,8 @@
   import StoriesMobile from '@/components/mobile/StoriesMobile'
   import InstagramMobile from '@/components/mobile/InstagramMobile'
   import { createClient } from '@/plugins/contentful'
+  import Stories from '@/components/Stories'
+  
   import VueMarkdown from 'vue-markdown'
 
   const contentfulClient = createClient()
@@ -104,16 +125,31 @@
         LookbookMobile,
         StoriesMobile,
         InstagramMobile,
-        VueMarkdown
+        VueMarkdown,
+        Stories
     },
     name: 'index',
     asyncData ({ env, params }) {
-      return contentfulClient.getEntries({
+      return Promise.all([
+         // fetch all lookbook items sorted by creation date
+        contentfulClient.getEntries({
+          'content_type': 'lookbook',
+          order: '-sys.createdAt'
+        }),
+        contentfulClient.getEntries({
         'content_type': 'campaigns',
         'fields.slug': params.slug
-      }).then(entries => {
+         }),
+         // fetch all stories items sorted by creation date
+        contentfulClient.getEntries({
+          'content_type': 'stories',
+          order: '-sys.createdAt'
+        })
+      ]).then(([lookbooks, campaigns, stories]) => {
         return {
-          campaigns: entries.items[0],
+          items: lookbooks.items,
+          campaigns: campaigns.items[0],
+          storieItems: stories.items,
         }
       }).catch(console.error)
     }

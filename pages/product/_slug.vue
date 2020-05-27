@@ -2,6 +2,8 @@
   <section>
         <div class="page-wrap">
           <Header />
+          
+          <!-- Mobile View  -->
           <mq-layout mq="sm">
             <TitleMobile title="LOOKBOOK" class="margin-top-header"/>
             <DetailsMobile
@@ -14,11 +16,27 @@
               :picture="item.fields.file.url"
               :key="item"
             />
-            <CampaignsMobile />
-            <StoriesMobile />
+            <CampaignsMobile>
+                  <CampaignsCard
+                                v-for="(campaignItem, index) in campaignItems"
+                                :thumbnail="campaignItem.fields.thumbnailPicture.fields.file.url"
+                                :title="campaignItem.fields.campaignTitle"
+                                :slug="campaignItem.fields.slug"
+                                :key="index"
+                              />  
+            </CampaignsMobile>
+            <StoriesMobile>
+                  <Stories
+                                v-for="(storieItem, index) in storieItems"
+                                :thumbnail="storieItem.fields.image.fields.file.url"
+                                :title="storieItem.fields.title"
+                                :key="index"
+                              />
+            </StoriesMobile>
             <InstagramMobile />
           </mq-layout>
           
+           <!-- Desktop View  -->
           <mq-layout mq="lg">
             <Titles />
             <b-container fluid class="app_page">
@@ -67,8 +85,11 @@
   import CampaignsMobile from '@/components/mobile/CampaignsMobile'
   import StoriesMobile from '@/components/mobile/StoriesMobile'
   import InstagramMobile from '@/components/mobile/InstagramMobile'
+  import CampaignsCard from '@/components/CampaignsCard'
+  import Stories from '@/components/Stories'
   import { createClient } from '@/plugins/contentful'
   import VueMarkdown from 'vue-markdown'
+
   const contentfulClient = createClient()
 
   export default {
@@ -83,16 +104,32 @@
         CampaignsMobile,
         StoriesMobile,
         InstagramMobile,
-        VueMarkdown
+        VueMarkdown,
+        CampaignsCard,
+        Stories
     },
     name: 'index',
     asyncData ({ env, params }) {
-      return contentfulClient.getEntries({
+      return Promise.all([
+        contentfulClient.getEntries({
         'content_type': 'lookbook',
         'fields.slug': params.slug
-      }).then(entries => {
+        }),
+        // fetch all campaigns items sorted by creation date
+        contentfulClient.getEntries({
+          'content_type': 'campaigns',
+          order: '-sys.createdAt'
+        }),
+        // fetch all stories items sorted by creation date
+        contentfulClient.getEntries({
+          'content_type': 'stories',
+          order: '-sys.createdAt'
+        })
+      ]).then(([lookbooks, campaigns, stories]) => {
         return {
-          lookbook: entries.items[0],
+          lookbook: lookbooks.items[0],
+          campaignItems: campaigns.items,
+          storieItems: stories.items,
         }
       }).catch(console.error)
     }

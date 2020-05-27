@@ -3,7 +3,7 @@
             <mq-layout mq="sm">
                 <b-row class="fixed-navbar">
                     <b-col cols="12" md="6" class="pt-3 border-bottom">
-                        <div class="pb-5 padding-left pt-1">
+                        <div class="pb-5 padding-left-titles pt-1">
                             <router-link to="/home">
                                 <img class="logo pb-3" src="~/assets/medeea_medeea_black.png">
                             </router-link>   
@@ -14,19 +14,19 @@
             <mq-layout mq="lg">
                 <b-row class="fixed-navbar">
                     <b-col cols="12" md="6" class=" border-bottom  pt-3">
-                        <div class="padding-left pt-1">
+                        <div class="padding-left-titles pt-1">
                             <router-link to="/home">
                                 <img class="logo" src="~/~/assets/medeea_medeea_black.png">
                             </router-link>
                         </div>
                     </b-col>
                     <b-col cols="12" md="3" class="border-bottom border-left border-right pt-3">
-                        <p class="padding-left mb-0 pb-0">+40 723 983 828</p>
-                        <p class="padding-left" >INQUIRIES(AT)MEDEEAENE.COM</p>
+                        <p class="padding-left-titles mb-0 pb-0 p-titles">+40 723 983 828</p>
+                        <p class="padding-left-titles p-titles" >INQUIRIES(AT)MEDEEAENE.COM</p>
                     </b-col>
                     <b-col cols="12" md="3" class="border-bottom pt-3">
                         <a v-bind:href="link">
-                            <p class="padding-left">INSTAGRAM</p>
+                            <p class="padding-left-titles p-titles">INSTAGRAM</p>
                         </a>
                     </b-col>
                 </b-row>
@@ -44,21 +44,10 @@
     }
 </script>
 
-<style scoped>
+<style>
     
-
-    .padding-left{
-        padding-left: 12px;
-    }
-
     .logo { 
         max-width: 120px;
-    }
-
-    p{
-        font-size: 12px;
-        font-weight: bold;
-        line-height: normal; 
     }
 
 </style>

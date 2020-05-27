@@ -13,6 +13,7 @@
                               :slug="item.fields.slug"
                               :key="index"
                             />
+                  <div class="load-more-btn text-center d-flex justify-content-center align-items-center" @click="loadMore()"><span>LOAD MORE</span></div>
                 </LookbookMobile>
                 <CampaignsMobile>
                   <CampaignsCard
@@ -51,6 +52,7 @@
                               :slug="item.fields.slug"
                               :key="index"
                             />
+                            <div class="load-more-btn text-center d-flex justify-content-center align-items-center" @click="loadMore()"><span>LOAD MORE</span></div>
                           </b-row>
                          
                         </b-col>
@@ -97,6 +99,8 @@
   import { createClient } from '../plugins/contentful'
 
   const contentfulClient = createClient()
+  const skipAmount = 0;
+
   export default {
     components: {
       Header,
@@ -110,33 +114,92 @@
       StoriesMobile,
       InstagramMobile
     },
-    asyncData ({env}) {
-      return Promise.all([
+    // asyncData ({env}) {
+    //   return Promise.all([
+    //     // fetch all lookbook items sorted by creation date
+    //     contentfulClient.getEntries({
+    //       'content_type': 'lookbook',
+    //       order: '-sys.createdAt',
+    //       "limit": 10,
+    //     }),
+    //      // fetch all campaigns items sorted by creation date
+    //     contentfulClient.getEntries({
+    //       'content_type': 'campaigns',
+    //       order: '-sys.createdAt'
+    //     }),
+    //      // fetch all stories items sorted by creation date
+    //     contentfulClient.getEntries({
+    //       'content_type': 'stories',
+    //       order: '-sys.createdAt'
+    //     })
+    //   ]).then(([lookbooks, campaigns, stories]) => {
+    //     // return data that should be available
+    //     // in the template
+    //     return {
+    //       items: lookbooks.items,
+    //       campaignItems: campaigns.items,
+    //       storieItems: stories.items,
+    //     }
+    //   }).catch(console.error)
+    // },
+    data: function(){
+      return {
+        items:[],
+        campaignItems: [],
+        storieItems: []
+      }
+    },
+    mounted(){
+      this.loadMore(0),
+      this.getData()
+
+    },
+    methods:{
+      getData() {
+        return Promise.all([
+          // fetch all campaigns items sorted by creation date
+          contentfulClient.getEntries({
+            'content_type': 'campaigns',
+            order: '-sys.createdAt'
+          }),
+          // fetch all stories items sorted by creation date
+          contentfulClient.getEntries({
+            'content_type': 'stories',
+            order: '-sys.createdAt'
+          })
+        ]).then(([campaigns, stories]) => {
+          // return data that should be available
+          // in the template
+          console.log(campaigns)
+          this.campaignItems= [
+            ...campaigns.items
+          ]
+          this.storieItems=[
+            ...stories.items
+          ]
+          
+        }).catch(console.error)
+      },
+      loadMore() {
+       return Promise.all([
         // fetch all lookbook items sorted by creation date
         contentfulClient.getEntries({
           'content_type': 'lookbook',
-          order: '-sys.createdAt'
-        }),
-         // fetch all campaigns items sorted by creation date
-        contentfulClient.getEntries({
-          'content_type': 'campaigns',
-          order: '-sys.createdAt'
-        }),
-         // fetch all campaigns items sorted by creation date
-        contentfulClient.getEntries({
-          'content_type': 'stories',
-          order: '-sys.createdAt'
-        })
-      ]).then(([lookbooks, campaigns, stories]) => {
+          order: '-sys.createdAt',
+          "limit": 10,
+          "skip": this.items.length,
+        }) 
+      ]).then(lookbooks => {
         // return data that should be available
-        // in the template
-        return {
-          items: lookbooks.items,
-          campaignItems: campaigns.items,
-          storieItems: stories.items,
-        }
-      }).catch(console.error)
+        // in the template       
+          this.items= [
+            ...this.items,
+            ...lookbooks[0].items
+          ]
+        
+      })
     }
+  }
   }
    
 
@@ -144,6 +207,13 @@
 
 
 <style>
+.load-more-btn{
+  width: 100%;
+  border-top: black solid 1px;
+  height: 55px;
+  font-size: 10px;
+  font-weight: bold;
+}
 
 .pointer{
   cursor:pointer;
@@ -237,6 +307,7 @@
     .page-wrap {
       min-height: 100%;
       margin-bottom: 245px;
+      
     }
  }
 
@@ -260,22 +331,22 @@
 
     a:link {
       text-decoration: none;
-      color:black!important;
+      color:black !important;
     }
 
     a:visited {
       text-decoration: none;
-      color:black;
+      color:black !important;
     }
 
     a:hover {
       text-decoration: none;
-      color:black;
+      color:black !important;
     }
 
     a:active {
       text-decoration: none;
-      color:black;
+      color:black !important;
     }
 
   

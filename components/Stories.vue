@@ -13,7 +13,7 @@
     }
 </script>
 
-<style scoped>
+<style>
 
     .pic-card{
         box-sizing: border-box;

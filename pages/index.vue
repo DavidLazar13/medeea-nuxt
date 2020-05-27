@@ -31,7 +31,7 @@
 </script>
 
 
-<style scoped>
+<style>
 .logo-landing{
     margin: 15px 0 0 27px;
     width: 120px;
