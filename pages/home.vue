@@ -52,7 +52,7 @@
                               :slug="item.fields.slug"
                               :key="index"
                             />
-                            <div class="load-more-btn text-center d-flex justify-content-center align-items-center border-right" @click="loadMore()"><span>LOAD MORE</span></div>
+                            <div class="load-more-btn text-center d-flex justify-content-center align-items-center border-right pointer" @click="loadMore()"><span>LOAD MORE</span></div>
                           </b-row>
                          
                         </b-col>
@@ -204,3 +204,7 @@
    
 
 </script>
+
+<style>
+.pointer {cursor: pointer;}
+</style>
