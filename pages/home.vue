@@ -13,7 +13,7 @@
                               :slug="item.fields.slug"
                               :key="index"
                             />
-                  <div class="load-more-btn text-center d-flex justify-content-center align-items-center" @click="loadMore()"><span>LOAD MORE</span></div>
+                  <div v-if="items.length < entries - (storieItems.length + campaignItems.length)" class="load-more-btn text-center d-flex justify-content-center align-items-center" @click="loadMore()"><span>LOAD MORE</span></div>
                 </LookbookMobile>
                 <CampaignsMobile>
                   <CampaignsCard
@@ -52,7 +52,7 @@
                               :slug="item.fields.slug"
                               :key="index"
                             />
-                            <div class="load-more-btn text-center d-flex justify-content-center align-items-center border-right pointer" @click="loadMore()"><span>LOAD MORE</span></div>
+                            <div v-if="items.length < entries - (storieItems.length + campaignItems.length)" class="load-more-btn text-center d-flex justify-content-center align-items-center border-right pointer" @click="loadMore()"><span>LOAD MORE</span></div>
                           </b-row>
                          
                         </b-col>
@@ -100,6 +100,7 @@
 
   const contentfulClient = createClient()
   const skipAmount = 0;
+  
 
   export default {
     components: {
@@ -142,21 +143,22 @@
     //     }
     //   }).catch(console.error)
     // },
-    data: function(){
+    data: function() {
       return {
         items:[],
         campaignItems: [],
-        storieItems: []
+        storieItems: [],
+        entries: "",
       }
     },
     mounted(){
       this.loadMore(0),
       this.getData()
-
     },
     methods:{
       getData() {
         return Promise.all([
+          contentfulClient.getEntries(),
           // fetch all campaigns items sorted by creation date
           contentfulClient.getEntries({
             'content_type': 'campaigns',
@@ -167,16 +169,21 @@
             'content_type': 'stories',
             order: '-sys.createdAt'
           })
-        ]).then(([campaigns, stories]) => {
+        ]).then(([entries, campaigns, stories]) => {
           // return data that should be available
           // in the template
-          console.log(campaigns)
+          this.entries = entries.total
           this.campaignItems= [
             ...campaigns.items
           ]
           this.storieItems=[
             ...stories.items
           ]
+          
+          // console.log(this.entries - (this.storieItems.length + this.campaignItems.length) )
+          // console.log(this.storieItems.length + this.campaignItems.length),
+          // console.log(this.entries.total)
+        
           
         }).catch(console.error)
       },
@@ -191,13 +198,14 @@
         }) 
       ]).then(lookbooks => {
         // return data that should be available
-        // in the template       
+        // in the template    
           this.items= [
             ...this.items,
             ...lookbooks[0].items
           ]
-        
+          // console.log(this.items.length)
       })
+      
     }
   }
   }
