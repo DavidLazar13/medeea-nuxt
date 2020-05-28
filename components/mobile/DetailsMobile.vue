@@ -1,24 +1,29 @@
 <template>
     <b-container fluid >
-            <b-row class="title-container-h">
-                <b-col cols="12" class="border-bottom mt-1 border-top pt-3 pb-4 padding-left">
+            <b-row class="">
+                <b-col cols="12" class="border-bottom mt-1 border-top pt-3 pb-4">
                     <div>
                         <p class="mb-0 pb-0 uppercase">{{ title }}</p>
                         <p class="mb-0 pb-0 uppercase">{{ price }}</p>
                     </div>
-                    <div class="pt-1">
+                    <div class="pt-3 pb-1">
                         <p class="mb-0 pb-0 uppercase">
-                            {{ description }}
+                           <vue-markdown> {{ description }} </vue-markdown>
                          </p>
                     </div>
-                    </div>
+                    
                 </b-col>
             </b-row>
     </b-container>
 </template>
 
 <script>
+import VueMarkdown from 'vue-markdown'
+
     export default {
+        components:{
+            VueMarkdown
+        },
         props: ['title', 'price', 'description']
     }
 </script>

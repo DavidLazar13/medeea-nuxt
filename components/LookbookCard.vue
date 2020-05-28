@@ -4,9 +4,9 @@
             <nuxt-link :to="'/product/'+ slug">
                 <img class="image" :src="thumbnail"/>
             </nuxt-link>
-            <div class="card-body padding-left">
-                <p class="mb-0 pb-0 text-uppercase">{{title}}</p>
-                <p class="pt-0 mt-0 mb-0 text-uppercase">{{price}}</p>
+            <div class="card-body">
+                <p class="mb-0 pb-0 pl-0 pl-md-3 text-uppercase">{{title}}</p>
+                <p class="pt-0 mt-0 mb-0 pl-0 pl-md-3 text-uppercase">{{price}}</p>
             </div>
         </b-col>
     

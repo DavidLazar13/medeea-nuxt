@@ -3,8 +3,8 @@
         <nuxt-link :to="'/campaign/' + slug">
             <img class="image" :src="thumbnail"/>
         </nuxt-link>
-        <div class="card-body padding-left">
-            <p class="mb-0 pb-3 text-uppercase">{{title}}</p>
+        <div class="card-body ">
+            <p class="mb-0 pb-3 pl-0 pl-md-3 text-uppercase">{{title}}</p>
         </div>
     </b-col>
 </template>

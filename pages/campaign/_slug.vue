@@ -8,7 +8,7 @@
             <TitleMobile title="CAMPAIGNS" class="margin-top-header"/>
             <DetailsMobile
                 :title="campaigns.fields.campaignTitle"
-                :description="campaigns.fields.details"
+                :description="campaigns.fields.description"
             />
             <ProductCard 
                 :thumbnail="campaigns.fields.thumbnailPicture.fields.file.url"
@@ -35,7 +35,7 @@
                                 :title="storieItem.fields.title"
                                 :key="index"
                               />
-                </StoriesMobile>
+            </StoriesMobile>
             <InstagramMobile />
           </mq-layout>
 
@@ -54,9 +54,7 @@
                         </b-row>
                       </b-col>
                       <b-col cols="3" class="border-right sticky pt-3 pb-4 padding-left">
-                          <div>
-                              <p>{{ campaigns.fields.campaignTitle }}</p>
-                          </div>
+                          
                           <div class="pt-1">
                               <p class="mb-0 pb-0 uppercase"><vue-markdown>{{ campaigns.fields.description }}</vue-markdown></p>
                           </div>

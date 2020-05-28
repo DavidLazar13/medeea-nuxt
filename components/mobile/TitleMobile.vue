@@ -1,8 +1,8 @@
 <template>
     <b-container fluid >
             <b-row class="">
-                <b-col cols="12" class="border-top mt-1 pt-3 pb-4 padding-left">
-                    <p class="font-size-32 pb-3">{{ title }}</p>
+                <b-col cols="12" class="pt-3 pb-4">
+                    <p class="font-size-32 padding-bottom">{{ title }}</p>
                 </b-col>
             </b-row>
     </b-container>
@@ -19,7 +19,8 @@
         font-size: 18px;
     }
 
- .title-container-h{
-     height: 85px;
- }
+.padding-bottom{
+    padding-bottom: 9px;
+    }
+ 
 </style>
