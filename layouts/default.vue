@@ -192,7 +192,7 @@ html, body {
 
 @media (min-width: 768px) {
     #left {
-        max-height:90vh;
+        max-height:87vh;
         bottom: 0;
         
        
@@ -200,7 +200,7 @@ html, body {
     }
 
     #middle {
-        max-height:90vh;
+        max-height:87vh;
         bottom: 0;
     
        
@@ -208,7 +208,7 @@ html, body {
     }
 
     #right {
-        max-height:90vh;
+        max-height:87vh;
         bottom: 0;
         overflow-y: scroll;
         
