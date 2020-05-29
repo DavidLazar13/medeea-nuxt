@@ -5,7 +5,7 @@
                     <b-col cols="12" md="6" class="pt-3 border-bottom">
                         <div class="pb-5 pt-1">
                             <router-link to="/home">
-                                <img class="logo pb-3" src="~/assets/medeea_medeea_black.png">
+                                <img class="logo pb-3" src="~/assets/medeea-logo.png">
                             </router-link>   
                         </div>
                     </b-col>

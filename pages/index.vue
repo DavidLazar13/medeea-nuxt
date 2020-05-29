@@ -1,7 +1,7 @@
 <template>
 <router-link to="/home">
     <div class="bg" :class="selectedBackground">
-        <img class="logo-landing" src="~/~/assets/Medeea_Stripe_Black.png">
+        <img class="logo-landing" src="~/~/assets/Medeea-stripe.png">
     </div>
 </router-link>
 </template>
@@ -50,19 +50,19 @@
 }
 
 .bg-1{
-    background-image: url('/landing-page.png');
+    background-image: url('/landing-page-min.png');
 }
 
 .bg-2{
-    background-image: url('/landing_2.png');
+    background-image: url('/landing_2-min.png');
 }
 
 .bg-3{
-    background-image: url('/landing_3.png');
+    background-image: url('/landing_3-min.png');
 }
 
 .bg-4{
-    background-image: url('/landing_4.png');
+    background-image: url('/landing_4-min.png');
 }
 
 </style>
