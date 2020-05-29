@@ -8,7 +8,7 @@
                   <LookbookCard 
                               v-for="(item, index) in items"
                               :thumbnail="item.fields.thumbnailPicture.fields.file.url"
-                              :title="item.fields.item"
+                              :title="item.fields.itemsTitle"
                               :price="item.fields.price"
                               :slug="item.fields.slug"
                               :key="index"
@@ -19,7 +19,7 @@
                   <CampaignsCard
                                 v-for="(campaignItem, index) in campaignItems"
                                 :thumbnail="campaignItem.fields.thumbnailPicture.fields.file.url"
-                                :title="campaignItem.fields.campaignTitle"
+                                :title="campaignItem.fields.campaignsTitle"
                                 :slug="campaignItem.fields.slug"
                                 :key="index"
                               />  
@@ -47,7 +47,7 @@
                               class="lookbook-card" 
                               v-for="(item, index) in items"
                               :thumbnail="item.fields.thumbnailPicture.fields.file.url"
-                              :title="item.fields.item"
+                              :title="item.fields.itemsTitle"
                               :price="item.fields.price"
                               :slug="item.fields.slug"
                               :key="index"
@@ -61,7 +61,7 @@
                             <CampaignsCard
                                 v-for="(campaignItem, index) in campaignItems"
                                 :thumbnail="campaignItem.fields.thumbnailPicture.fields.file.url"
-                                :title="campaignItem.fields.campaignTitle"
+                                :title="campaignItem.fields.campaignsTitle"
                                 :slug="campaignItem.fields.slug"
                                 :key="index"
                               />   

@@ -7,7 +7,7 @@
           <mq-layout mq="sm">
             <TitleMobile title="CAMPAIGNS" class="margin-top-header"/>
             <DetailsMobile
-                :title="campaigns.fields.campaignTitle"
+                :title="campaigns.fields.campaignsTitle"
                 :description="campaigns.fields.description"
             />
             <ProductCard 
@@ -54,7 +54,7 @@
                         </b-row>
                       </b-col>
                       <b-col cols="3" class="border-right sticky pt-3 pb-4 padding-left">
-                          
+                          <p class="mb-0 pb-0 uppercase"><vue-markdown>{{ campaigns.fields.campaignsTitle }}</vue-markdown></p>
                           <div class="pt-1">
                               <p class="mb-0 pb-0 uppercase"><vue-markdown>{{ campaigns.fields.description }}</vue-markdown></p>
                           </div>

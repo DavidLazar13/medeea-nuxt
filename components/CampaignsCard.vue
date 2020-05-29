@@ -4,14 +4,19 @@
             <img class="image" :src="thumbnail"/>
         </nuxt-link>
         <div class="card-body ">
-            <p class="mb-0 pb-3 pl-0 pl-md-3 text-uppercase">{{title}}</p>
+            <p class="mb-0 pl-0 pl-md-3 text-uppercase"><vue-markdown>{{title}}</vue-markdown></p>
         </div>
     </b-col>
 </template>
 
 <script>
+import VueMarkdown from 'vue-markdown'
+
     export default {
-        props: ['thumbnail', 'title', 'slug']
+        props: ['thumbnail', 'title', 'slug'],
+        components: {
+            VueMarkdown
+        }
     }
 </script>
 

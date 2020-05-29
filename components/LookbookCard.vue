@@ -5,8 +5,7 @@
                 <img class="image" :src="thumbnail"/>
             </nuxt-link>
             <div class="card-body">
-                <p class="mb-0 pb-0 pl-0 pl-md-3 text-uppercase">{{title}}</p>
-                <p class="pt-0 mt-0 mb-0 pl-0 pl-md-3 text-uppercase">{{price}}</p>
+                <p class="mb-0 pb-0 pl-0 pl-md-3 text-uppercase"><vue-markdown>{{title}}</vue-markdown></p>
             </div>
         </b-col>
     
@@ -14,12 +13,20 @@
 </template>
 
 <script>
+import VueMarkdown from 'vue-markdown'
+
     export default {
-        props: ['thumbnail', 'title', 'price' ,'slug']
+        props: ['thumbnail', 'title', 'price' ,'slug'],
+        components: {
+            VueMarkdown
+        }
     }
 </script>
 
 <style >
+    .card-body{
+        padding-bottom: 4px;
+    }
 
     .pic-card{
         box-sizing: border-box;

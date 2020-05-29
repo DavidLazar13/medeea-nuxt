@@ -7,8 +7,7 @@
           <mq-layout mq="sm">
             <TitleMobile title="LOOKBOOK" class="margin-top-header"/>
             <DetailsMobile
-              :title="lookbook.fields.item"
-              :price="lookbook.fields.price"
+              :title="lookbook.fields.itemsTitle"
               :description="lookbook.fields.description"
             />
             <PictureCard 
@@ -52,8 +51,7 @@
                     </b-col>
                     <b-col cols="3" class=" border-right pt-3 pb-4 padding-left" id="middle">
                         <div>
-                            <p class="mb-0 pb-0 text-uppercase">{{ lookbook.fields.item}}</p>
-                            <p class="pt-0 mt-0 text-uppercase">{{ lookbook.fields.price}}</p>
+                            <p class="mb-0 pb-0 text-uppercase"><vue-markdown>{{ lookbook.fields.itemsTitle}}</vue-markdown></p>
                         </div>
                         <div class="pt-1 mr-4">
                             <p class="mb-0 pb-0 uppercase">
