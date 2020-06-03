@@ -19,7 +19,7 @@
                   <CampaignsCard
                                 v-for="(campaignItem, index) in campaignItems"
                                 :thumbnail="campaignItem.fields.thumbnailPicture.fields.file.url"
-                                :title="campaignItem.fields.campaignTitle"
+                                :title="campaignItem.fields.campaignsTitle"
                                 :slug="campaignItem.fields.slug"
                                 :key="index"
                               />  

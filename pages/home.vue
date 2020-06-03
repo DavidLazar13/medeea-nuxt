@@ -9,7 +9,6 @@
                               v-for="(item, index) in items"
                               :thumbnail="item.fields.thumbnailPicture.fields.file.url"
                               :title="item.fields.itemsTitle"
-                              :price="item.fields.price"
                               :slug="item.fields.slug"
                               :key="index"
                             />
@@ -42,7 +41,7 @@
                 <Titles />
                 <b-container fluid class="app_page">
                     <b-row>
-                        <b-col cols="12" md="6" id="left" class="">
+                        <b-col cols="12" md="6" id="left" class="border-right">
                           <b-row class="first">
                             <LookbookCard
                               class="lookbook-card" 
@@ -53,7 +52,7 @@
                               :slug="item.fields.slug"
                               :key="index"
                             />
-                            <div v-if="items.length < entries - (storieItems.length + campaignItems.length)" class="load-more-btn text-center d-flex justify-content-center align-items-center border-right pointer" @click="loadMore()"><span>LOAD MORE</span></div>
+                            <div v-if="items.length < entries - (storieItems.length + campaignItems.length)" class="load-more-btn text-center d-flex justify-content-center align-items-center pointer" @click="loadMore()"><span>LOAD MORE</span></div>
                           </b-row>
                          
                         </b-col>
@@ -218,4 +217,10 @@
 
 <style>
 .pointer {cursor: pointer;}
+
+.lookbook-card:nth-child(2n-1){
+  border-right: solid 1px black;
+}
+
+
 </style>

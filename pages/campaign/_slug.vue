@@ -22,11 +22,11 @@
                   <LookbookCard 
                               v-for="(item, index) in items"
                               :thumbnail="item.fields.thumbnailPicture.fields.file.url"
-                              :title="item.fields.item"
-                              :price="item.fields.price"
+                              :title="item.fields.itemsTitle"
                               :slug="item.fields.slug"
                               :key="index"
                             />
+                  <div v-if="items.length < entries - (storieItems.length + campaignItems.length)" class="load-more-btn text-center d-flex justify-content-center align-items-center border-right pointer" @click="loadMore()"><span>LOAD MORE</span></div>
             </LookbookMobile>
             <StoriesMobile>
                   <Stories
@@ -131,13 +131,22 @@
         ShowroomMobile
     },
     name: 'index',
+    data: function() {
+      return {
+        items:[],
+        campaignItems: [],
+        storieItems: [],
+        entries: "",
+      }
+    },
+    mounted(){
+      this.loadMore(0)
+      this.getData()
+
+    },
     asyncData ({ env, params }) {
       return Promise.all([
          // fetch all lookbook items sorted by creation date
-        contentfulClient.getEntries({
-          'content_type': 'lookbook',
-          order: '-sys.createdAt'
-        }),
         contentfulClient.getEntries({
         'content_type': 'campaigns',
         'fields.slug': params.slug
@@ -147,14 +156,66 @@
           'content_type': 'stories',
           order: '-sys.createdAt'
         })
-      ]).then(([lookbooks, campaigns, stories]) => {
+      ]).then(([campaigns, stories]) => {
         return {
-          items: lookbooks.items,
           campaigns: campaigns.items[0],
           storieItems: stories.items,
         }
       }).catch(console.error)
+    },
+    methods:{
+      getData() {
+        return Promise.all([
+          contentfulClient.getEntries(),
+          // fetch all campaigns items sorted by creation date
+          contentfulClient.getEntries({
+            'content_type': 'campaigns',
+            order: '-sys.createdAt'
+          }),
+          // fetch all stories items sorted by creation date
+          contentfulClient.getEntries({
+            'content_type': 'stories',
+            order: '-sys.createdAt'
+          })
+        ]).then(([entries, campaigns, stories]) => {
+          // return data that should be available
+          // in the template
+          this.entries = entries.total
+          this.campaignItems= [
+            ...campaigns.items
+          ]
+          this.storieItems=[
+            ...stories.items
+          ]
+          
+          // console.log(this.entries - (this.storieItems.length + this.campaignItems.length) )
+          // console.log(this.storieItems.length + this.campaignItems.length),
+          // console.log(this.entries.total)
+        
+          
+        }).catch(console.error)
+      },
+       loadMore() {
+       return Promise.all([
+        // fetch all lookbook items sorted by creation date
+        contentfulClient.getEntries({
+          'content_type': 'lookbook',
+          order: '-sys.createdAt',
+          "limit": 10,
+          "skip": this.items.length,
+        }) 
+      ]).then(lookbooks => {
+        // return data that should be available
+        // in the template    
+          this.items= [
+            ...this.items,
+            ...lookbooks[0].items
+          ]
+          // console.log(this.items.length)
+      })
     }
+    }
+   
   }
 
  
