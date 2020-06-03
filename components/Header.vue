@@ -13,16 +13,19 @@
             </mq-layout>
             <mq-layout mq="lg">
                 <b-row class="fixed-navbar">
-                    <b-col cols="12" md="6" class=" border-bottom border-right  pt-3">
+                    <b-col cols="12" md="6" class=" border-bottom border-right pt-3">
                         <div class="padding-left-titles pt-1">
                             <router-link to="/home">
                                 <img class="logo" src="~/~/assets/medeea_medeea_black.png">
                             </router-link>
                         </div>
                     </b-col>
-                    <b-col cols="12" md="3" class="border-bottom border-right pt-3">
-                        <p class="padding-left-titles mb-0 pb-0 p-titles">+40 723 983 828</p>
-                        <p class="padding-left-titles p-titles" >INQUIRIES(AT)MEDEEAENE.COM</p>
+                    <b-col cols="12" md="3" class="border-bottom border-right header-padding-bottom pt-3">
+                        <p class="padding-left-titles mb-0 pb-0 p-titles">
+                            <router-link to="/showroom">
+                                SHOWROOM
+                            </router-link>
+                        </p>
                     </b-col>
                     <b-col cols="12" md="3" class="border-bottom pt-3">
                         <a v-bind:href="link">
@@ -48,6 +51,10 @@
     
     .logo { 
         max-width: 120px;
+    }
+
+    .header-padding-bottom {
+        padding-bottom: 27px;
     }
 
 </style>

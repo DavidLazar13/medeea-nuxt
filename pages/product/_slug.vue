@@ -32,6 +32,7 @@
                                 :key="index"
                               />
             </StoriesMobile>
+            <ShowroomMobile />
             <InstagramMobile />
           </mq-layout>
           
@@ -83,6 +84,7 @@
   import CampaignsMobile from '@/components/mobile/CampaignsMobile'
   import StoriesMobile from '@/components/mobile/StoriesMobile'
   import InstagramMobile from '@/components/mobile/InstagramMobile'
+  import ShowroomMobile from '@/components/mobile/ShowroomMobile'
   import CampaignsCard from '@/components/CampaignsCard'
   import Stories from '@/components/Stories'
   import { createClient } from '@/plugins/contentful'
@@ -104,7 +106,8 @@
         InstagramMobile,
         VueMarkdown,
         CampaignsCard,
-        Stories
+        Stories,
+        ShowroomMobile
     },
     name: 'index',
     asyncData ({ env, params }) {

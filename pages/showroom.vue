@@ -36,7 +36,6 @@
                                 :key="index"
                               />
             </StoriesMobile>
-            <ShowroomMobile />
             <InstagramMobile />
           </mq-layout>
 
@@ -49,15 +48,25 @@
                   <b-row>
                       <b-col cols="6" class="border-right">
                         <b-row>
-                          <ProductCard 
-                            :thumbnail="campaigns.fields.thumbnailPicture.fields.file.url"
-                          />
+                          <b-col cols="12" class="pic-card">
+            
+                            <img class="image" src="~/assets/medeea_showroom_1.jpg"/>
+
+                        </b-col>
                         </b-row>
                       </b-col>
                       <b-col cols="3" class="border-right sticky pt-3 pb-4 padding-left">
-                          <p class="mb-0 pb-0 uppercase"><vue-markdown>{{ campaigns.fields.campaignsTitle }}</vue-markdown></p>
+                          <p class="uppercase">
+                            Str. Londra 28<br>
+                            Monday to Friday<br>
+                            11:00–19:00
+
+                           </p>
                           <div class="pt-1">
-                              <p class="mb-0 pb-0 uppercase"><vue-markdown>{{ campaigns.fields.description }}</vue-markdown></p>
+                              <p class="mb-0 pb-0 uppercase"> 
+                              contact@medeeaene.com<br>
+                              +40 754 633 332
+                              </p>
                           </div>
                       </b-col>
                       <b-col cols="3" class="sticky pt-3 pb-4 padding-left">
@@ -69,13 +78,57 @@
                   <b-row>
                       <b-col cols="12" class="" >
                         <b-row class="first">
-                          <CampaignCard 
-                               class="campaign-card"
-                               v-for="item in campaigns.fields.galery"
-                               :picture="item.fields.file.url"
-                               :key="item"
-                          />
-                        </b-row>
+                          <b-col cols="6" class="pic-card border-top">
+            
+                            <img class="image" src="~/assets/medeea_showroom_2.jpg"/>
+
+                          </b-col>
+                          <b-col cols="6" class="pic-card border-top shadow-left">
+            
+                            <img class="image" src="~/assets/medeea_showroom_3.jpg"/>
+
+                          </b-col>
+                          <b-col cols="6" class="pic-card border-top">
+            
+                            <img class="image" src="~/assets/medeea_showroom_4.jpg"/>
+
+                          </b-col>
+                          <b-col cols="6" class="pic-card border-top shadow-left">
+            
+                            <img class="image" src="~/assets/medeea_showroom_5.jpg"/>
+
+                          </b-col>
+                          <b-col cols="6" class="pic-card border-top">
+            
+                            <img class="image" src="~/assets/medeea_showroom_6.jpg"/>
+
+                          </b-col>
+                          <b-col cols="6" class="pic-card border-top shadow-left">
+            
+                            <img class="image" src="~/assets/medeea_showroom_7.jpg"/>
+
+                          </b-col>
+                          <b-col cols="6" class="pic-card border-top">
+            
+                            <img class="image" src="~/assets/medeea_showroom_8.jpg"/>
+
+                          </b-col>
+                          <b-col cols="6" class="pic-card border-top shadow-left">
+            
+                            <img class="image" src="~/assets/medeea_showroom_9.jpg"/>
+
+                          </b-col>
+                          <b-col cols="6" class="pic-card border-top">
+            
+                            <img class="image" src="~/assets/medeea_showroom_10.jpg"/>
+
+                          </b-col>
+                          <b-col cols="6" class="pic-card border-top shadow-left">
+            
+                            <img class="image" src="~/assets/medeea_showroom_11.jpg"/>
+
+                          </b-col>
+                        </b-row> 
                       </b-col>
                   </b-row>
                 </div>
@@ -100,8 +153,6 @@
   import LookbookMobile from '@/components/mobile/LookbookMobile'
   import StoriesMobile from '@/components/mobile/StoriesMobile'
   import InstagramMobile from '@/components/mobile/InstagramMobile'
-  import ShowroomMobile from '@/components/mobile/ShowroomMobile'
-
   import { createClient } from '@/plugins/contentful'
   import Stories from '@/components/Stories'
 
@@ -127,8 +178,7 @@
         StoriesMobile,
         InstagramMobile,
         VueMarkdown,
-        Stories,
-        ShowroomMobile
+        Stories
     },
     name: 'index',
     asyncData ({ env, params }) {
@@ -164,7 +214,7 @@
 
 <style>
 
-.first .campaign-card:nth-child(2n){
+.shadow-left{
   -webkit-box-shadow: -1px 0px 0px 0px rgba(0,0,0,1);
   -moz-box-shadow: -1px 0px 0px 0px rgba(0,0,0,1);
   box-shadow: -1px 0px 0px 0px rgba(0,0,0,1);

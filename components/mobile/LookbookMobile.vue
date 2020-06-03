@@ -20,7 +20,7 @@
         },
         data: function(){
             return {
-                attachDisplay: false
+                attachDisplay: true
             }
         }
     }

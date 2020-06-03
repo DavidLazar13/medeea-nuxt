@@ -32,6 +32,7 @@
                                 :key="index"
                               />
                 </StoriesMobile>
+                <ShowroomMobile />
                   
                 <InstagramMobile />
             </mq-layout>
@@ -96,6 +97,7 @@
   import CampaignsMobile from '@/components/mobile/CampaignsMobile'
   import StoriesMobile from '@/components/mobile/StoriesMobile'
   import InstagramMobile from '@/components/mobile/InstagramMobile'
+  import ShowroomMobile from '@/components/mobile/ShowroomMobile'
   import { createClient } from '../plugins/contentful'
 
   const contentfulClient = createClient()
@@ -113,7 +115,8 @@
       LookbookMobile,
       CampaignsMobile,
       StoriesMobile,
-      InstagramMobile
+      InstagramMobile,
+      ShowroomMobile
     },
     // asyncData ({env}) {
     //   return Promise.all([
