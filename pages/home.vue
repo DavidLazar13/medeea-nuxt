@@ -218,8 +218,10 @@
 <style>
 .pointer {cursor: pointer;}
 
-.lookbook-card:nth-child(2n-1){
-  border-right: solid 1px black;
+.lookbook-card:nth-child(2n){
+  -webkit-box-shadow: -1px 0px 0px 0px rgba(0,0,0,1);
+  -moz-box-shadow: -1px 0px 0px 0px rgba(0,0,0,1);
+  box-shadow: -1px 0px 0px 0px rgba(0,0,0,1);
 }
 
 
