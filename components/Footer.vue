@@ -4,12 +4,13 @@
                 <b-col cols="12" md="6" col- class="border-top border-right pt-3">
                     <div class="py-1 px-0 px-md-3">
                         <div>
-                            <p class="mb-0 pb-0">+40 723 983 828 </p>
-                            <p class="pt-0 mt-0">INQUIRIES(AT)MEDEEAENE.COM</p>
+                            <p class="mb-0 pb-0">STR. LONDRA 28</p>
+                            <p class="mb-0 pb-0">MONDAY TO FRIDAY</p>
+                            <p class="pt-0 mt-0">11:00–19:00</p>
                         </div>
                         <div class="pt-1">
-                            <p class="mb-0 pb-0">STR. ADRESA SHOWROOM 56 </p>
-                            <p class="pt-0 mt-0">093774, BUCHAREST</p>
+                            <p class="mb-0 pb-0">CONTACT@MEDEEAENE.COM</p>
+                            <p class="pt-0 mt-0">+40 754 633 332</p>
                         </div>
                     </div>
                 </b-col>
