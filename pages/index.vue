@@ -88,6 +88,11 @@
 
 }
 
+@media only screen and (max-width: 600px) {
+    .logo-landing{
+      left: 15px;
+    } 
+ }
 
 /*
 .bg {
