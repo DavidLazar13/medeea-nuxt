@@ -2,14 +2,19 @@
     <b-col cols="12" class="pic-card">
         <img class="image" :src="thumbnail">
         <div class="card-body">
-            <p class="mb-0 pb-3 text-uppercase pl-0 pl-md-3">{{title}}</p>
+            <p class="mb-0 pb-0 text-uppercase pl-0 pl-md-3"><vue-markdown>{{title}}</vue-markdown></p>
         </div>
     </b-col>
 </template>
 
 <script>
+import VueMarkdown from 'vue-markdown'
+
     export default {
-        props: ['thumbnail', 'title']
+        props: ['thumbnail', 'title'],
+        components: {
+            VueMarkdown
+        }
     }
 </script>
 

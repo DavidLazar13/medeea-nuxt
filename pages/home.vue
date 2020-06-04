@@ -27,7 +27,7 @@
                   <Stories
                                 v-for="(storieItem, index) in storieItems"
                                 :thumbnail="storieItem.fields.image.fields.file.url"
-                                :title="storieItem.fields.title"
+                                :title="storieItem.fields.titleDescription"
                                 :key="index"
                               />
                 </StoriesMobile>
@@ -72,7 +72,7 @@
                               <Stories
                                 v-for="(storieItem, index) in storieItems"
                                 :thumbnail="storieItem.fields.image.fields.file.url"
-                                :title="storieItem.fields.title"
+                                :title="storieItem.fields.titleDescription"
                                 :key="index"
                               />
                             </b-row>
@@ -210,7 +210,7 @@
       
     }
   }
-  }
+}
    
 
 </script>
@@ -224,5 +224,8 @@
   box-shadow: -1px 0px 0px 0px rgba(0,0,0,1);
 }
 
+.lookbook-card:nth-last-child(1) {
+  border-right: solid 1px black;
+}
 
 </style>
