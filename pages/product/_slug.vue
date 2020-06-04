@@ -28,7 +28,7 @@
                   <Stories
                                 v-for="(storieItem, index) in storieItems"
                                 :thumbnail="storieItem.fields.image.fields.file.url"
-                                :title="storieItem.fields.title"
+                                :title="storieItem.fields.titleDescription"
                                 :key="index"
                               />
             </StoriesMobile>
