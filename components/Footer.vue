@@ -6,7 +6,7 @@
                         <div>
                             <p class="mb-0 pb-0">STR. LONDRA 28</p>
                             <p class="mb-0 pb-0">MONDAY TO FRIDAY</p>
-                            <p class="pt-0 mt-0">11:00–19:00</p>
+                            <p class="pt-0 mt-0">12:00–19:00</p>
                         </div>
                         <div class="pt-1">
                             <p class="mb-0 pb-0">CONTACT@MEDEEAENE.COM</p>
