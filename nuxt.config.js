@@ -1,7 +1,7 @@
 
 const config = require('./.contentful.json');
 
-let ROOT_PATH = 'https://medeea.heroku.com'
+let ROOT_PATH = 'https://medeea.herokuapp.com/'
 
 export default {
   mode: 'universal',
