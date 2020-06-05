@@ -12,7 +12,7 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Official Website' },
-      { property: 'og-image', content: 'https://medeea.herokuapp.com/thumbnail.png' },
+      { property: 'og-image', href: '/thumbnail.png' },
       { property: 'og:description', content: 'Official Website' },
       { property: 'og:title', content: 'MEDEEA' }
     ],
