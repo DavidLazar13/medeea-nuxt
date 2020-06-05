@@ -59,7 +59,7 @@
                           <p class="uppercase">
                             Str. Londra 28<br>
                             Monday to Friday<br>
-                            11:00–19:00
+                            12:00–19:00
 
                            </p>
                           <div class="pt-1">
