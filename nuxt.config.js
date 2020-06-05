@@ -1,20 +1,30 @@
 
 const config = require('./.contentful.json');
 
+let ROOT_PATH = 'https://medeea.heroku.com'
+
 export default {
   mode: 'universal',
   /*
   ** Headers of the page
   */
+  data() {
+    return {
+      logo: ROOT_PATH + require('./assets/thumbnail.png')
+    }
+  },
   head: {
     title: 'MEDEEA',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Official Website' },
-      { property: 'og-image', href: '/thumbnail.png' },
+      { property: 'og:site_name', content: 'MEDEEA' },
+      { property: 'og:title', content: 'MEDEEA' },
+      { property: 'og:type', content: 'website' },
       { property: 'og:description', content: 'Official Website' },
-      { property: 'og:title', content: 'MEDEEA' }
+      { property: 'og-image', content: this.logo }
+
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
