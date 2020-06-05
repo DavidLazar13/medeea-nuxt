@@ -12,9 +12,9 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Official Website' },
-      { hid: 'og-image', property: 'og-image', content: '/thumbnail.png' },
-      { hid: 'og:description', property: 'og:description', content: 'Official Website' },
-      { hid: 'og:title', property: 'og:title', content: 'MEDEEA' }
+      { property: 'og-image', content: 'https://medeea.herokuapp.com/thumbnail.png' },
+      { property: 'og:description', content: 'Official Website' },
+      { property: 'og:title', content: 'MEDEEA' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
