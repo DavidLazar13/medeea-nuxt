@@ -18,7 +18,7 @@
                 :picture="item.fields.file.url"
                 :key="item"
             />
-            <LookbookMobile class="border-top">
+            <LookbookMobileClosed class="border-top">
                   <LookbookCard 
                               v-for="(item, index) in items"
                               :thumbnail="item.fields.thumbnailPicture.fields.file.url"
@@ -27,7 +27,7 @@
                               :key="index"
                             />
                   <div v-if="items.length < entries - (storieItems.length + campaignItems.length)" class="load-more-btn text-center d-flex justify-content-center align-items-center border-right pointer" @click="loadMore()"><span>LOAD MORE</span></div>
-            </LookbookMobile>
+            </LookbookMobileClosed>
             <StoriesMobile>
                   <Stories
                                 v-for="(storieItem, index) in storieItems"
@@ -97,7 +97,7 @@
   import TitleMobile from '@/components/mobile/TitleMobile'
   import DetailsMobile from '@/components/mobile/DetailsMobile'
   import PictureCard from '@/components/mobile/PictureCard'
-  import LookbookMobile from '@/components/mobile/LookbookMobile'
+  import LookbookMobileClosed from '@/components/mobile/LookbookMobileClosed'
   import StoriesMobile from '@/components/mobile/StoriesMobile'
   import InstagramMobile from '@/components/mobile/InstagramMobile'
   import ShowroomMobile from '@/components/mobile/ShowroomMobile'
@@ -123,7 +123,7 @@
         TitleMobile,
         DetailsMobile,
         PictureCard,
-        LookbookMobile,
+        LookbookMobileClosed,
         StoriesMobile,
         InstagramMobile,
         VueMarkdown,
