@@ -4,9 +4,10 @@
                 <b-col cols="12" md="6" col- class="border-top border-right pt-3">
                     <div class="py-1 px-0 px-md-3">
                         <div>
-                            <p class="mb-0 pb-0">STR. LONDRA 28</p>
+                            <p class="mb-0 pb-0">BUCHAREST, LONDRA 28</p>
                             <p class="mb-0 pb-0">MONDAY TO FRIDAY</p>
-                            <p class="pt-0 mt-0">12:00–19:00</p>
+                            <p class="mb-0 pb-0">12:00–19:00</p>
+                            <p class="pt-0 mt-0">SATURDAY BY APPOINTMENT</p>
                         </div>
                         <div class="pt-1 uppercase">
                             <p class="mb-0 pb-0"><a v-bind:href="'mailto:contact@medeeaene.com'">contact@medeeaene.com</a></p>
