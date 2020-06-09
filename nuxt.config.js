@@ -49,12 +49,16 @@ export default {
   */
   plugins: [
     '~/plugins/contentful',
-    '~/plugins/vueMarkdown.js'
+    '~/plugins/vueMarkdown.js',
+    { src: '~plugins/ga.js', mode: 'client' }
   ],
   /*
   ** Nuxt.js dev-modules
   */
   buildModules: [
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-168910459-1'
+    }]
   ],
   /*
   ** Nuxt.js modules

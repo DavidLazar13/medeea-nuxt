@@ -57,15 +57,16 @@
                       </b-col>
                       <b-col cols="3" class="border-right sticky pt-3 pb-4 padding-left">
                           <p class="uppercase">
-                            Str. Londra 28<br>
+                            BUCHAREST, LONDRA 28<br>
                             Monday to Friday<br>
-                            12:00–19:00
+                            12:00–19:00<br>
+                            SATURDAY BY APPOINTMENT
 
                            </p>
                           <div class="pt-1">
                               <p class="mb-0 pb-0 uppercase"> 
-                              contact@medeeaene.com<br>
-                              +40 754 633 332
+                              <a v-bind:href="'mailto:contact@medeeaene.com'">contact@medeeaene.com</a><br>
+                              <a v-bind:href="'tel:+40 754 633 332'">+40 754 633 332</a>
                               </p>
                           </div>
                       </b-col>

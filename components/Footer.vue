@@ -8,9 +8,9 @@
                             <p class="mb-0 pb-0">MONDAY TO FRIDAY</p>
                             <p class="pt-0 mt-0">12:00–19:00</p>
                         </div>
-                        <div class="pt-1">
-                            <p class="mb-0 pb-0">CONTACT@MEDEEAENE.COM</p>
-                            <p class="pt-0 mt-0">+40 754 633 332</p>
+                        <div class="pt-1 uppercase">
+                            <p class="mb-0 pb-0"><a v-bind:href="'mailto:contact@medeeaene.com'">contact@medeeaene.com</a></p>
+                            <p class="pt-0 mt-0"><a v-bind:href="'tel:+40 754 633 332'">+40 754 633 332</a></p>
                         </div>
                     </div>
                 </b-col>
