@@ -5,7 +5,7 @@
     </div> --> 
     <div class="fullscreen-bg">
         <img class="logo-landing" src="~/~/assets/Medeea-stripe.png">
-        <video playsinline loop muted autoplay preload class="fullscreen-bg__video" src="medeea-maps.mp4">
+        <video playsinline loop muted autoplay preload class="fullscreen-bg__video" src="Medeea_Fall_Winter.mp4">
             
         </video>
     </div>

@@ -2,7 +2,7 @@
     <b-container fluid>
             <b-row @click="attachDisplay = !attachDisplay">
                 <b-col cols="12" class="border-top pt-3 pb-4">
-                    <p class="font-size-32 pb-3">CAMPAIGNS</p>
+                    <p class="font-size-32 pb-3">ARCHIVE</p>
                 </b-col>
             </b-row>
             <b-row :class="{display: attachDisplay}" class="border-top">
