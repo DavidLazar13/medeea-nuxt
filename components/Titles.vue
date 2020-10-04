@@ -5,7 +5,7 @@
                     <p class="padding-left-titles p-titles">LOOKBOOK</p>
                 </b-col>
                 <b-col cols="3" class="border-bottom border-top border-right  pt-3 pb-4">
-                    <p class="padding-left-titles p-titles">CAMPAIGNS</p>
+                    <p class="padding-left-titles p-titles">ARCHIVE</p>
                 </b-col>
                 <b-col cols="3" class="border-bottom border-top pt-3 pb-4">
                     <p class="padding-left-titles p-titles">STORIES</p>

@@ -17,15 +17,15 @@
     "@contentful/rich-text-html-renderer": "^13.4.0",
     "@nuxtjs/dotenv": "^1.4.1",
     "babel-runtime": "^6.26.0",
-    "bootstrap": "^4.1.3",
-    "bootstrap-vue": "^2.0.0",
-    "contentful": "^7.14.0",
-    "nuxt": "^2.0.0",
+    "bootstrap": "^4.5.2",
+    "bootstrap-vue": "^2.17.3",
+    "contentful": "^7.14.6",
+    "nuxt": "^2.14.6",
     "nuxt-mq": "^2.0.1",
-    "vue-intersection-observer": "^0.1.5",
+    "vue-intersection-observer": "^0.1.6",
     "vue-markdown": "^2.2.4"
   },
   "devDependencies": {
-    "@nuxtjs/google-analytics": "^2.3.0"
+    "@nuxtjs/google-analytics": "^2.4.0"
   }
 }
